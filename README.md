@@ -8,3 +8,19 @@ App for Unself to link volunteers and organizations in need of volunteers
 * Schema: https://gstudents.slack.com/files/rshelbyvaldesg49/F5RPB32MB/screen_shot_2017-06-09_at_4.26.11_pm.png
 
 * Deployed Site: https://unselfproject.herokuapp.com/
+
+###Before You Push!
+
+* Pull from master into your branch. git pull origin master (it may ask for a merge reason)
+
+* Resolve  merge conflicts.
+
+* Push to branch. git push origin *branchname*
+
+* Navigate to repository on GitHub.
+
+* Submit Pull Request with the base of master and the compare of *branchname*
+
+* Finish and Deliver on Pivitol Tracker
+
+* Slack or tell the group that a feature is finished and ready for testing.
