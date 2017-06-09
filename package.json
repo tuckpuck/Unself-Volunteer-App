@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "App for Unself to link volunteers and organizations in need of volunteers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsvaldes/Q2-Unself-Volunteer-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsvaldes/Q2-Unself-Volunteer-App/issues"
+  },
+  "homepage": "https://github.com/rsvaldes/Q2-Unself-Volunteer-App#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "knex": "^0.13.0"
+  }
+}
