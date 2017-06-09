@@ -5,6 +5,6 @@ App for Unself to link volunteers and organizations in need of volunteers
 
 * Wireframe: https://files.slack.com/files-pri/T1T555TL0-F5RJ624P5/unself.png
 
-* Schema:
+* Schema: https://gstudents.slack.com/files/rshelbyvaldesg49/F5RPB32MB/screen_shot_2017-06-09_at_4.26.11_pm.png
 
 * Deployed Site: https://unselfproject.herokuapp.com/
