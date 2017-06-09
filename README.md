@@ -7,4 +7,4 @@ App for Unself to link volunteers and organizations in need of volunteers
 
 * Schema:
 
-* Deployed Site: 
+* Deployed Site: https://unselfproject.herokuapp.com/
