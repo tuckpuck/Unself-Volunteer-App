@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Spacing */
+.toppadding150 {
+  padding-top: 150px;
+}
+
+.toppadding60 {
+  padding-top: 60px;
+}
+
+.toppadding40 {
+  padding-top: 40px;
+}
