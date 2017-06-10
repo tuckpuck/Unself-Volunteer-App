@@ -27,6 +27,7 @@
   </nav>
   <div class="container-fluid">
     <h1>Create Your Event</h1>
+    <form id = "createEvent">
     <div class="form-group">
       <label for="eventName">Event Name</label>
       <input type="text" id="event-name" class="form-control" placeholder="">
@@ -61,6 +62,7 @@
           <select class="form-control" id="start-time">
         <option value= "" disable selected hidden>Select</option>
         <option value= "12:00">12:00</option>
+        <option value= "12:30">12:30</option>
       </select>
         </div>
       </div>
@@ -82,6 +84,7 @@
           <select class="form-control" id="end-time">
       <option value= "" disable selected hidden>Select</option>
       <option value= "12:00">12:00</option>
+      <option value= "12:30">12:30</option>
     </select>
         </div>
       </div>
@@ -171,6 +174,7 @@
     <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
     <input class="btn btn-primary btn-lg" id="organizer-submit" type="submit" value="Submit">
   </div>
+</form>
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->

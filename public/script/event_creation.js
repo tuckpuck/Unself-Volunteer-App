@@ -3,11 +3,17 @@ $(document).ready(function() {
   $(function() {
     for (let i = 1; i <= 11; i++) {
       $('#start-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      if (i % 2 === 0 || i % 1 === 0) {
+        $('#start-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+      }
     }
   });
   $(function() {
     for (let i = 1; i <= 11; i++) {
       $('#end-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      if (i % 2 === 0 || i % 1 === 0) {
+        $('#end-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+      }
     }
   });
 
@@ -25,7 +31,7 @@ $(document).ready(function() {
     this.photo_url = photo_url;
     this.event_url = event_url;
   }
-  $('#organizer-submit').on('click', function(event) {
+  $('#createEvent').on('submit', function(event) {
     event.preventDefault();
     var newEvent = new Event();
     newEvent.event_name = $('#event-name').val();
@@ -44,20 +50,21 @@ $(document).ready(function() {
     newEvent.event_url = $('#event-url').val();
     newEvent.photo_url = $('#photo-url').val();
     newEvent = JSON.stringify(newEvent);
+    console.log(newEvent);
 
-    var request = $.ajax({
-        url: "/events",
-        method: "POST",
-        data: newEvent,
-        contentType: "application/json"
-      })
-      .done(function() {
-        alert("Event Created!");
-      })
-      .fail(function() {
-        alert("Please Check That All Fields Are Completed");
-      });
-
+  //   var request = $.ajax({
+  //       url: "/events",
+  //       method: "POST",
+  //       data: newEvent,
+  //       contentType: "application/json"
+  //     })
+  //     .done(function() {
+  //       alert("Event Created!");
+  //     })
+  //     .fail(function() {
+  //       alert("Please Check That All Fields Are Completed");
+  //     });
+  //
   });
 
 });
