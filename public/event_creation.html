@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,8 +20,7 @@
     </button>
 
     <a class="navbar-brand" href="index.html">
-<img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
-
+      <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     </div>
@@ -37,40 +37,75 @@
     </div>
     <div class="form-group">
       <label for="eventCause">Event Cause</label>
-      <select class="form-control" id="cause-select">
+      <select class="form-control" id="event-cause">
         <option value= "" disable selected hidden>Select</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option>Homeless Pets</option>
+        <option>Vets</option>
+        <option>Refugees</option>
+        <option>Domestic Violence</option>
+        <option>Clean Water</option>
       </select>
     </div>
 
     <label for="eventDate">Event Date</label>
     <div class="input-group input-daterange">
-      <input type="text" id="start-date" class="form-control" placeholder="Start (MM-DD-YYYY)" value="">
+      <input type="text" id="start-date" class="form-control" placeholder="MM-DD-YYYY" value="">
       <div class="input-group-addon">to</div>
-      <input type="text" id="end-date" class="form-control" placeholder="End (MM-DD-YYYY)" value="">
+      <input type="text" id="end-date" class="form-control" placeholder="MM-DD-YYYY" value="">
     </div>
-    <label for="eventTime">Event Time</label>
-    <div class="input-group input-daterange">
-      <input type="text" id="start-time" class="form-control" placeholder="Start Time" value="">
-      <div class="input-group-addon">to</div>
-      <input type="text" id="end-time" class="form-control" placeholder="End Time" value="">
-    </div>
-
-    <label for="eventAddress">Event Address</label>
-    <!-- <div class="row"> -->
-    <input type="text" class="form-control" id="address-input" placeholder="Street Address">
-    <!-- </div> -->
+    <!-- <label for="eventTime">Event Time</label> -->
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" id="city-input" placeholder="City">
+        <div class="form-group">
+          <label for="startTime">Start Time</label>
+          <select class="form-control" id="start-time">
+        <option value= "" disable selected hidden>Select</option>
+        <option value= "12:00">12:00</option>
+      </select>
+        </div>
       </div>
       <div class="col">
         <div class="form-group">
-          <select class="form-control" id="state-input">
+          <label for="startTime"> &nbsp;</label>
+          <select class="form-control" id="ampmStart">
+        <option value= "" disable selected hidden>AM/PM</option>
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="endTime">End Time</label>
+        <div class="form-group">
+          <select class="form-control" id="end-time">
+      <option value= "" disable selected hidden>Select</option>
+      <option value= "12:00">12:00</option>
+    </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="amPm">&nbsp;</label>
+          <select class="form-control" id="ampmEnd">
+      <option value= "" disable selected hidden>AM/PM</option>
+      <option>AM</option>
+      <option>PM</option>
+    </select>
+        </div>
+      </div>
+    </div>
+    <label for="eventAddress">Event Address</label>
+    <input type="text" class="form-control" id="street-address" placeholder="Street Address">
+    <!-- </div> -->
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" id="city" placeholder="City">
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <select class="form-control" id="state">
             <option value= "" disable selected hidden>State</option>
             <option value="AL">Alabama</option>
            	<option value="AK">Alaska</option>
@@ -127,18 +162,22 @@
         </div>
       </div>
       <div class="col">
-        <input type="text" class="form-control" id="zipcode-input" placeholder="Zip Code">
+        <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
       </div>
     </div>
+    <label for="eventURL">Event URL</label>
+    <input type="text" class="form-control" id="event-url" placeholder="Event URL">
     <label for="eventPhoto">Event Photo</label>
-    <input type="text" class="form-control" id="photo-url" placeholder="Photo Url">
+    <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
     <input class="btn btn-primary btn-lg" id="organizer-submit" type="submit" value="Submit">
   </div>
   <!-- jQuery JS-->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="script/event_creation.js" charset="utf-8"></script>
 </body>
+
 </html>
