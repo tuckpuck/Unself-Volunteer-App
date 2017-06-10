@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(path.join('public')));
 
 const users = require('./routes/users');
 const organizations = require('./routes/organizations');
