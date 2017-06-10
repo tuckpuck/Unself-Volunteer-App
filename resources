@@ -1,0 +1,10 @@
+//sample card for user home page events
+
+<div class="card">
+  <img class="card-img-top" src="https://www.designacademy.nl/Portals/0/www/home/academy_news/Graduation%202013%20-%20Self%20Unself.jpg" alt="Card image cap">
+  <div class="card-block">
+<a href = "events.html">Bolder Boulder</a>
+    <p class="card-text">May 29th - 1pm<br>
+    Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
