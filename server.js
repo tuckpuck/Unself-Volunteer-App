@@ -2,10 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
-
 app.use(bodyParser.json());
 const path = require('path');
 app.use(express.static('public'));
@@ -19,4 +15,10 @@ app.use((_req, res) => {
   res.sendStatus(404);
 });
 
-app.listen(3000);
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  if (app.get('env') !== 'test') {
+    console.log('Listening on port', port);
+  }
+});
