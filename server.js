@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+
 app.use(bodyParser.json());
-const path = require('path');
 app.use(express.static('public'));
 
 const users = require('./routes/users');
@@ -17,8 +17,4 @@ app.use((_req, res) => {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  if (app.get('env') !== 'test') {
-    console.log('Listening on port', port);
-  }
-});
+app.listen(port);
