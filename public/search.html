@@ -24,17 +24,30 @@
   </nav>
 <div class="container-fluid">
   <h1>Create Your Event</h1>
-    <!-- <div class = "row"> -->
-     <!-- <form> -->
  <div class="form-group">
     <label for="formGroupExampleInput">Event Name</label>
     <input type="text" id = "event-name" class="form-control" id="formGroupExampleInput" placeholder="">
   </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Event Description</label>
+    <textarea class="form-control" id="event-description" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+      <label for="exampleSelect1">Event Cause</label>
+      <select class="form-control" id="cause-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
   <label for="formGroupExampleInput2">Event Date</label>
   <div class="input-group input-daterange">
-    <input type="text" id = "start-date"class="form-control" placeholder="Start Date (MM-DD-YYYY)" value="">
+    <input type="text" id = "start-date"class="form-control" placeholder="Start (MM-DD-YYYY)" value="">
     <div class="input-group-addon">to</div>
-    <input type="text" id = "end-date"class="form-control" placeholder="End Date (MM-DD-YYYY)"value="">
+    <input type="text" id = "end-date"class="form-control" placeholder="End (MM-DD-YYYY)"value="">
   </div>
   <label for="formGroupExampleInput2">Event Time</label>
   <div class="input-group input-daterange">
@@ -44,16 +57,16 @@
   </div>
 
   <label for="formGroupExampleInput">Event Address</label>
-  <div class="row">
-    <div class="col-4">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Street Address">
-    </div>
+  <!-- <div class="row"> -->
+        <input type="text" class="form-control" id="address-input" placeholder="Street Address">
+  <!-- </div> -->
+  <div class = "row">
     <div class="col">
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City">
+      <input type="text" class="form-control" id="city-input" placeholder="City">
     </div>
     <div class="col">
       <div class="form-group">
-   <select class="form-control" id="state-select">
+   <select class="form-control" id="state-input">
       <option value= "" disable selected hidden>State</option>
       <option value="AL">Alabama</option>
  	<option value="AK">Alaska</option>
@@ -110,12 +123,14 @@
  </div>
     </div>
     <div class="col">
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Zip Code">
+      <input type="text" class="form-control" id="zipcode-input" placeholder="Zip Code">
     </div>
   </div>
 
- <!-- </form> -->
-    <!-- </div> -->
+  <label for="formGroupExampleInput">Event Photo</label>
+  <input type="text" class="form-control" id="address-input" placeholder="Photo Url">
+  <input class="btn btn-primary btn-lg" id ="organizer-submit" type="submit" value="Submit">
+</div>
 
     <!-- jQuery JS-->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
