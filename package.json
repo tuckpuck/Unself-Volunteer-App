@@ -4,6 +4,8 @@
   "description": "App for Unself to link volunteers and organizations in need of volunteers",
   "main": "server.js",
   "scripts": {
+    "heroku-postbuild": "knex migrate:latest",
+    "knex": "knex",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
