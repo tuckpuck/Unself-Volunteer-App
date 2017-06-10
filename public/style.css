@@ -69,6 +69,28 @@ button:hover {
   border-top-right-radius: 0;
 }
 
+/*volunteer home page*/
+
+.card-img-top {
+  max-height: 9em;
+}
+
+/*user home*/
+
+#noEvents {
+  font-size: 100px;
+  padding-left: 10%;
+}
+#searchFromUser {
+  margin-left: 10%;
+}
+#noEventsYet {
+  padding-top: 10%;
+}
+
+#userWelcome {
+  font-size: 50px;
+}
 
 /* Spacing */
 
