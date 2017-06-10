@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Create An Account</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <title>Create An Account</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- Local CSS -->
-    <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="style.css" type="text/css">
 
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <!-- Tether JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Tether JS -->
   <script src=“https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js” integrity=“sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb” crossorigin=“anonymous”></script>
 
-    <script src="script/user_create.js" charset="utf-8"></script>
+  <script src="script/user_create.js" charset="utf-8"></script>
 
-  </head>
-  <body>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="index.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-2" action="signin.html">
-          <button class="btn btn-outline-success my-2 my-sm-0  navbar-toggler-right" type="submit">Login</button>
-        </form>
-      </div>
-    </nav>
-
-    <div class="container-fluid">
-      <form class="volunteer col-6"  method="post">
-        <input type="name" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="First Name" required>
-        <input type="name" class="form-control" id="last_name" aria-describedby="emailHelp" placeholder="Last Name" required>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required>
-        <input type="phone" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Phone">
-        <input type="number" class="form-control" id="age" aria-describedby="emailHelp" placeholder="Age">
-        <input type="text" class="form-control" id="photo_url" aria-describedby="emailHelp" placeholder="Photo URL">
-        <input class="btn btn-primary" type="submit" value="Submit">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-2" action="signin.html">
+        <button class="btn btn-outline-success my-2 my-sm-0  navbar-toggler-right" type="submit">Login</button>
       </form>
     </div>
-  </body>
+  </nav>
+
+  <div class="container-fluid">
+    <form class="volunteer col-6" method="post">
+
+      <label for="first_name">First Name</label>
+      <input type="name" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="First Name" required>
+
+      <label for="last_name">Last Name</label>
+      <input type="name" class="form-control" id="last_name" aria-describedby="emailHelp" placeholder="Last Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required>
+
+      <label for="phone">Phone</label>
+      <input type="phone" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Phone">
+
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" aria-describedby="emailHelp" placeholder="Age">
+
+      <label for="photo_url">Photo</label>
+      <input type="text" class="form-control" id="photo_url" aria-describedby="emailHelp" placeholder="Photo URL">
+
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+
 </html>
