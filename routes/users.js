@@ -16,12 +16,12 @@ router.post('/users', function(req,res,next){
       res.setHeader('Content-Type', 'text/plain');
       return res.status(400).send('Email already exists');
     }
-  });
-  knex('users')
-  .insert(newUser, '*' )
-  .then(function(data){
-    res.setHeader('Content-Type', 'application/json');
-    return res.send(data[0]);
+    knex('users')
+    .insert(newUser, '*' )
+    .then(function(data){
+      res.setHeader('Content-Type', 'application/json');
+      return res.send(data[0]);
+    });
   });
 });
 
