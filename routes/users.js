@@ -6,6 +6,7 @@ const router = express.Router();
 var knex = require('../knex');
 
 router.post('/users', function(req,res,next){
+  console.log(req.body);
   var newUser = req.body;
   knex('users')
   .select('id')
