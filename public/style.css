@@ -22,6 +22,10 @@ button:hover {
   cursor: pointer;
 }
 
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
 .unself-logo {
   width: 35px;
   height: 35px;
@@ -90,6 +94,11 @@ button:hover {
 
 #userWelcome {
   font-size: 50px;
+}
+
+/* new_user */
+.form-control {
+  margin-bottom: 10px;
 }
 
 /* Spacing */
