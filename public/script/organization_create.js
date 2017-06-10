@@ -1,12 +1,12 @@
 
 $( document ).ready(function() {
-  function Organization(org_name, org_phone, org_email, org_website, org_description, org_photo_url){
-    this.org_name = org_name;
-    this.org_phone = org_phone;
-    this.org_email = org_email;
-    this.org_website = org_website;
-    this.org_description = org_description;
-    this.org_photo_url = org_photo_url;
+  function Organization(name, phone, email, website, description, photo_url){
+    this.name = org_name;
+    this.phone = org_phone;
+    this.email = org_email;
+    this.web_url = org_website;
+    this.description = org_description;
+    this.photo_url = org_photo_url;
   }
 
 
@@ -15,12 +15,12 @@ $( document ).ready(function() {
 
     var newOrganization = new Organization();
 
-    newOrganization.org_name = $('#org_name').val();
-    newOrganization.org_phone = $('#org_phone').val() || null;
-    newOrganization.org_email = $('#org_email').val() || null;
-    newOrganization.org_website = $('#org_website').val() || null;
-    newOrganization.org_description = $('#org_description').val() || null;
-    newOrganization.org_photo_url = $('#org_photo_url').val() || null;
+    newOrganization.name = $('#org_name').val();
+    newOrganization.phone = $('#org_phone').val() || null;
+    newOrganization.email = $('#org_email').val() || null;
+    newOrganization.web_url = $('#org_website').val() || null;
+    newOrganization.description = $('#org_description').val() || null;
+    newOrganization.photo_url = $('#org_photo_url').val() || null;
 
     newOrganization = JSON.stringify(newOrganization);
 

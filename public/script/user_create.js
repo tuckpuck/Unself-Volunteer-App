@@ -37,7 +37,5 @@ $( document ).ready(function() {
       alert( "Email Already Exists" );
     });
 
-
-
   });
 });
