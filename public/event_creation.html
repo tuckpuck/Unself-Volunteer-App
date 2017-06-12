@@ -18,7 +18,7 @@
     <a class="navbar-brand" href="index.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
   </nav>
-  
+
   <div class="container-fluid">
     <h1>Create Your Event</h1>
     <form id="createEvent">
@@ -53,7 +53,7 @@
         <div class="col">
           <div class="form-group">
             <label for="startTime">Start Time</label>
-            <select class="form-control" id="start-time">
+            <select class="form-control start-time" id="start-time">
         <option value= "" disable selected hidden>Select</option>
         <option value= "12:00">12:00</option>
         <option value= "12:30">12:30</option>
@@ -75,11 +75,11 @@
         <div class="col">
           <label for="endTime">End Time</label>
           <div class="form-group">
-            <select class="form-control" id="end-time">
-      <option value= "" disable selected hidden>Select</option>
-      <option value= "12:00">12:00</option>
-      <option value= "12:30">12:30</option>
-    </select>
+            <select class="form-control end-time" id="end-time">
+              <option value= "" disable selected hidden>Select</option>
+              <option value= "12:00">12:00</option>
+              <option value= "12:30">12:30</option>
+            </select>
           </div>
         </div>
         <div class="col">
@@ -166,9 +166,50 @@
       <input type="text" class="form-control" id="event-url" placeholder="Event URL">
       <label for="eventPhoto">Event Photo</label>
       <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
+      <div class="row container">
+        <button class="btn btn-outline-success margin10 col-1" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
+      </div>
       <input class="btn btn-primary btn-lg" id="organizer-submit" type="submit" value="Submit">
     </form>
-  </div>
+    <div class="row">
+
+
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content container">
+            <h1>Add Role</h1>
+            <form id="add-role">
+              <div class="col">
+                <label class="roles" for="roles">Select Role</label>
+                <select class="form-control select-roles col-6" name="select-roles">
+                  <option value= "" disable selected hidden>Select</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="endTime">Start Time</label>
+                <div class="form-group">
+                  <select class="form-control start-time" id="">
+                    <option value= "" disable selected hidden>Select</option>
+                    <option value= "12:00">12:00</option>
+                    <option value= "12:30">12:30</option>
+                  </select>
+                  <label for="endTime">End Time</label>
+                  <select class="form-control end-time" id="">
+                    <option value= "" disable selected hidden>Select</option>
+                    <option value= "12:00">12:00</option>
+                    <option value= "12:30">12:30</option>
+                  </select>
+                  <label for="number_needed">Number Needed</label>
+                  <input class="form-control" type="number" name="number_needed" value="">
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->
