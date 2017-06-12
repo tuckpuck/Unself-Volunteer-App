@@ -6,12 +6,11 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.post('/roles', function(req,res,next){
-  console.log(req.body);
   var newRole = req.body;
   knex('roles')
   .select('id')
   .where('name', newRole.name)
-  // .andWhere('organization_id', 'newRole.organization_id')
+  .andWhere('organization_id', newRole.organization_id)
   .then(function(data){
     if(data.length > 0){
       res.setHeader('Content-Type', 'text/plain');

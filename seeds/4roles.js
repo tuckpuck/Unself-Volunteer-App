@@ -11,6 +11,9 @@ exports.seed = function(knex, Promise) {
       {id: 4, name: 'Dining Room Manager', description: 'Supervise dining room area during meals.', organization_id: 3},
       {id: 5, name: 'Gift Shop Volunteer', description: 'Help customers in the gift shop.', organization_id: 4},
       {id: 6, name: 'Coach', description: 'Coach women on life skills.', organization_id: 3},
-    ]);
+    ])
+    .then(() => {
+      return knex.raw("SELECT setval('roles_id_seq', (SELECT MAX(id) FROM roles))");
+    });
   });
 };

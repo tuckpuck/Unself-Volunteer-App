@@ -8,8 +8,11 @@ app.use(express.static('public'));
 
 const users = require('./routes/users');
 const organizations = require('./routes/organizations');
+const roles = require('./routes/roles');
+
 app.use(users);
 app.use(organizations);
+app.use(roles);
 
 app.use((_req, res) => {
   res.sendStatus(404);
