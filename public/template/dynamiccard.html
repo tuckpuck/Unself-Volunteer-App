@@ -13,7 +13,7 @@
   <!-- Roboto Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- Local CSS -->
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="../style.css" type="text/css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
   </nav>
 
   <div class="container-fluid">
-    <div class="col-lg-6 col-offset-lg-3 text-center">
+    <div class="col-lg-6 col-offset-lg-3">
       <div id="append"></div>
       <!-- Card appends here -->
     </div>
@@ -41,7 +41,7 @@
     let boulderBoulder = {
       id: 1,
       name: "boulderBoulder",
-      street_address: "downtown boulder",
+      street_address: "5500 Central Avenue",
       city_id: "Boulder",
       zip_code: 80305,
       start_date: "May 29",
@@ -54,18 +54,32 @@
     }
 
     function populateCard(eventObject) {
-      let $el = $('<div class="card">' + '<a href = "" class="eventlink">' + '<img class="eventimg card-img-top" src="" alt="Card image cap">' + '<div class="card-block">' + '<p class="eventname"></p>' + '<p class="eventtime card-text"></p>' +
-        '<p class="eventdescription"></p>' + '</div>' + '</a>' + '</div>');
+      let $el = $('<div class="card">' + '<a href = "" class="eventlink">' + '<div class="text-center">'  + '<img class="eventimg card-img-top" src="" alt="Card image cap">' + '</div>' + '<div class="card-block">' + '<p class="eventname text-center"></p>' +
+      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '</div>' + '</div>' + '</a>');
+
       $el.find(".eventlink").attr("href", boulderBoulder.event_url);
       $el.find(".eventimg").attr("src", boulderBoulder.photo_url);
       $el.find(".eventname").text(boulderBoulder.name);
-      $el.find(".eventtime").text(boulderBoulder.start_date + " at " + boulderBoulder.start_time);
-      $el.find(".eventdescription").text(boulderBoulder.description);
+      if (boulderBoulder.start_date === boulderBoulder.end_date) {
+        $el.find(".eventdescription").text(boulderBoulder.description);
+      $el.find(".eventdate").text("Date: " + boulderBoulder.start_date);
+      } else {
+      $el.find(".eventdate").text("Date: " + boulderBoulder.start_date + " to " + boulderBoulder.end_date);
+    };
+      if (boulderBoulder.start_time === boulderBoulder.end_time) {
+      $el.find(".eventtime").text("Time: " + boulderBoulder.start_time);
+      } else {
+      $el.find(".eventtime").text("Time: " + boulderBoulder.start_time + " to " + boulderBoulder.end_time);
+    };
+    $el.find(".eventlocation").text("Location: " + boulderBoulder.street_address + ", " + boulderBoulder.city_id + " " + boulderBoulder.zip_code);
+
 
       $('#append').append($el);
     }
 
     populateCard(boulderBoulder);
+    populateCard(boulderBoulder);
+
   </script>
 </body>
 
