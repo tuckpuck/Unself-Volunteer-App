@@ -32,6 +32,7 @@ $( document ).ready(function() {
     })
     .done(function() {
       alert( "Account Created" );
+      window.location.href = "user_home.html";
     })
     .fail(function() {
       alert( "Email Already Exists" );

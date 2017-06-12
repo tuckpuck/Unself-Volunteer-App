@@ -32,6 +32,7 @@ $( document ).ready(function() {
     })
     .done(function() {
       alert( "Account Created" );
+      window.location.href = "organization_home.html";
     })
     .fail(function() {
       alert( "Organization Already Exists" );
