@@ -18,20 +18,22 @@
     <a class="navbar-brand" href="index.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
   </nav>
-  
+
   <div class="container-fluid">
-    <h1>Create Your Event</h1>
-    <form id="createEvent">
+    <div class="text-center topmargin40">
+    <h4>Create Your Event</h4>
+      </div>
+    <form class = "event col-md-6 offset-md-3 topmargin40" method = "post">
       <div class="form-group">
-        <label for="eventName">Event Name</label>
+        <label for="eventName">Event Name: *</label>
         <input type="text" id="event-name" class="form-control" placeholder="">
       </div>
       <div class="form-group">
-        <label for="eventDescription">Event Description</label>
+        <label for="eventDescription">Event Description: *</label>
         <textarea class="form-control" id="event-description" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label for="eventCause">Event Cause</label>
+        <label for="eventCause">Event Cause: *</label>
         <select class="form-control" id="event-cause">
         <option value= "" disable selected hidden>Select</option>
         <option>Homeless Pets</option>
@@ -42,17 +44,16 @@
       </select>
       </div>
 
-      <label for="eventDate">Event Date</label>
+      <label for="eventDate">Event Date: *</label>
       <div class="input-group input-daterange">
         <input type="text" id="start-date" class="form-control" placeholder="MM-DD-YYYY" value="">
         <div class="input-group-addon">to</div>
         <input type="text" id="end-date" class="form-control" placeholder="MM-DD-YYYY" value="">
       </div>
-      <!-- <label for="eventTime">Event Time</label> -->
       <div class="row">
         <div class="col">
           <div class="form-group">
-            <label for="startTime">Start Time</label>
+            <label for="startTime">Start Time: *</label>
             <select class="form-control" id="start-time">
         <option value= "" disable selected hidden>Select</option>
         <option value= "12:00">12:00</option>
@@ -73,7 +74,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <label for="endTime">End Time</label>
+          <label for="endTime">End Time: *</label>
           <div class="form-group">
             <select class="form-control" id="end-time">
       <option value= "" disable selected hidden>Select</option>
@@ -93,7 +94,7 @@
           </div>
         </div>
       </div>
-      <label for="eventAddress">Event Address</label>
+      <label for="eventAddress">Event Address: *</label>
       <input type="text" class="form-control" id="street-address" placeholder="Street Address">
       <!-- </div> -->
       <div class="row">
@@ -166,8 +167,12 @@
       <input type="text" class="form-control" id="event-url" placeholder="Event URL">
       <label for="eventPhoto">Event Photo</label>
       <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
-      <input class="btn btn-primary btn-lg" id="organizer-submit" type="submit" value="Submit">
+      <p>* denotes a required field</p>
+      <div class="text-center topmargin40">
+        <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+      </div>
     </form>
+
   </div>
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

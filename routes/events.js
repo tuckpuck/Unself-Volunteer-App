@@ -7,7 +7,8 @@ var knex = require('../knex');
 
 router.post('/events', function(req,res,next){
   var newEvent = req.body;
-  knex('organizations')
+  console.log(req.body);
+  knex('events')
   .select('id')
   .where('name', newEvent.name)
   .then(function(data){
@@ -23,6 +24,5 @@ router.post('/events', function(req,res,next){
     });
   });
 });
-
 
 module.exports = router;
