@@ -21,6 +21,6 @@ App for Unself to link volunteers and organizations in need of volunteers
 
 * Submit Pull Request with the base of master and the compare of *branchname*
 
-* Finish and Deliver on Pivitol Tracker
+* Finish and Deliver on Pivotal Tracker
 
 * Slack or tell the group that a feature is finished and ready for testing.
