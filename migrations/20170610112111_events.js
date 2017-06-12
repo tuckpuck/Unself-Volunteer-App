@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable("events", function(table){
     table.increments();
     table.string("name", 255).notNullable();
-    table.string("street_address", 255);
+    table.string("street_address", 255).notNullable();
     table.integer("city_id").references("id").inTable("cities");
     table.string("zip_code");
     table.date("start_date").notNullable();

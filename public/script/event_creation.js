@@ -31,7 +31,7 @@ $(document).ready(function() {
     this.photo_url = photo_url;
     this.event_url = event_url;
   }
-  $('#createEvent').on('submit', function(event) {
+  $('.event').on('submit', function(event) {
     event.preventDefault();
     var newEvent = new Event();
     newEvent.event_name = $('#event-name').val();
@@ -49,6 +49,7 @@ $(document).ready(function() {
     newEvent.zip = $('#zipcode').val();
     newEvent.event_url = $('#event-url').val();
     newEvent.photo_url = $('#photo-url').val();
+
     newEvent = JSON.stringify(newEvent);
     console.log(newEvent);
 
@@ -59,12 +60,12 @@ $(document).ready(function() {
         contentType: "application/json"
       })
       .done(function() {
-        alert("Event Created!");
+        alert("Event Created");
       })
       .fail(function() {
         alert("Please Check That All Fields Are Completed");
       });
-  
+      console.log(request);
   });
 
 });
