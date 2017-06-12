@@ -4,6 +4,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const knex = require('../knex');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
+router.use('/roles', function (req,res,next) {
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token,process.env.JWT_SECRET, function (err,decoded) {
+      if(decoded){
+        next();
+      }
+      else{
+        res.sendStatus(401);
+      }
+    });
+  }
+});
 
 router.use(function (req,res,next) {
   if (req.user) {

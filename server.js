@@ -22,7 +22,7 @@ const jwt = require('jsonwebtoken');
 app.use(users);
 app.use(organizations);
 
-app.use(function (req,res,next) {
+app.use('/', function (req,res,next) {
   if (req.cookies.token) {
     jwt.verify(req.cookies.token,process.env.JWT_SECRET, function (err,decoded) {
       if (err) {
