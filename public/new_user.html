@@ -18,22 +18,15 @@
 
 <body>
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
     <a class="navbar-brand" href="index.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    </div>
   </nav>
 
   <div class="container-fluid">
     <div class="text-center topmargin40">
-    <h4>Hello new user! Please create an account.</h4>
-      </div>
-    <form class="volunteer col-md-6 offset-md-3 topmargin40" method="post">
+      <h4>Hello new user! Please create an account.</h4>
+    </div>
+    <form class="volunteer col-md-6 offset-md-3 topmargin40" method="post" action="user_home.html">
 
       <label for="first_name">First Name: *</label>
       <input type="name" class="form-control" id="first_name" required>
@@ -44,6 +37,9 @@
       <label for="email">Email: *</label>
       <input type="email" class="form-control" id="email" required>
 
+      <label for="user_password">Password: *</label>
+      <input type="password" class="form-control" id="user_password" required>
+
       <label for="phone">Phone:</label>
       <input type="phone" class="form-control" id="phone">
 
@@ -53,19 +49,17 @@
       <label for="photo_url">Photo URL:</label>
       <input type="text" class="form-control" id="photo_url">
 
+
       <p>* denotes a required field</p>
 
-<div class="text-center topmargin40">
-  <input class="btn btn-primary" type="submit" value="Submit">
-</div>
+      <div class="text-center topmargin40">
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
     </form>
 
   </div>
   <!-- jQuery JS-->
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <!-- Bootstrap JS -->

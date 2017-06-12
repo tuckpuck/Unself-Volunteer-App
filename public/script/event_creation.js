@@ -1,18 +1,34 @@
 $(document).ready(function() {
 
+  (function getRoles() {
+    $.ajax({
+      url: "/roles",
+      method: "get",
+      contentType: "application/json"
+    })
+    .done(function(data){
+      for (var i = 0; i < data.length; i++) {
+        $('.select-roles').append($('<option></option>').html(data[i].name));
+      }
+    })
+    .fail(function() {
+      alert("No Roles Found!");
+    });
+  })();
+
   $(function() {
     for (let i = 1; i <= 11; i++) {
-      $('#start-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      $('.start-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
       if (i % 2 === 0 || i % 1 === 0) {
-        $('#start-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+        $('.start-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
       }
     }
   });
   $(function() {
     for (let i = 1; i <= 11; i++) {
-      $('#end-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      $('.end-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
       if (i % 2 === 0 || i % 1 === 0) {
-        $('#end-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+        $('.end-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
       }
     }
   });
@@ -31,7 +47,7 @@ $(document).ready(function() {
     this.photo_url = photo_url;
     this.event_url = event_url;
   }
-  $('#createEvent').on('submit', function(event) {
+  $('.event').on('submit', function(event) {
     event.preventDefault();
     var newEvent = new Event();
     newEvent.event_name = $('#event-name').val();
@@ -49,8 +65,9 @@ $(document).ready(function() {
     newEvent.zip = $('#zipcode').val();
     newEvent.event_url = $('#event-url').val();
     newEvent.photo_url = $('#photo-url').val();
+
     newEvent = JSON.stringify(newEvent);
-    console.log(newEvent);
+
 
     var request = $.ajax({
         url: "/events",
@@ -59,12 +76,12 @@ $(document).ready(function() {
         contentType: "application/json"
       })
       .done(function() {
-        alert("Event Created!");
+        alert("Event Created");
       })
       .fail(function() {
         alert("Please Check That All Fields Are Completed");
       });
-  
+
   });
 
 });

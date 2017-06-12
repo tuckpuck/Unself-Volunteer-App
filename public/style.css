@@ -80,20 +80,14 @@ input[type="submit"]:hover {
 }
 
 /*user home*/
-
-#noEvents {
-  font-size: 100px;
-  padding-left: 10%;
-}
-#searchFromUser {
-  margin-left: 10%;
-}
-#noEventsYet {
-  padding-top: 10%;
+.display-3 {
+  font-size: 1.7em;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
-#userWelcome {
-  font-size: 50px;
+.display-4 {
+  font-size: 2.7em;
 }
 
 /* new_user */
@@ -102,6 +96,9 @@ input[type="submit"]:hover {
 }
 
 /* Spacing */
+.margin10 {
+  margin-bottom: 10px;
+}
 
 .topmargin150 {
   margin-top: 150px;
@@ -117,4 +114,12 @@ input[type="submit"]:hover {
 
 .topmargin40 {
   margin-top: 40px;
+}
+
+.topmargin10 {
+  margin-top: 10px;
+}
+
+.allmargin20 {
+  margin: 20px;
 }

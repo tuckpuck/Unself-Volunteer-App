@@ -25,5 +25,20 @@ router.post('/roles', function(req,res,next){
   });
 });
 
+router.get('/roles', function(req,res,next){
+  knex('roles')
+  .select('name')
+  // .where('organization_id', 'organizations.id')
+  .then(function(data){
+    if(data.length < 0){
+      res.setHeader('Content-Type', 'text/plain');
+      return res.status(404).send('No Roles Found');
+    }
+    else{
+      res.send(data);
+    }
+  });
+});
+
 
 module.exports = router;
