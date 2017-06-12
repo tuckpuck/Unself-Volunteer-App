@@ -52,19 +52,19 @@ $(document).ready(function() {
     newEvent = JSON.stringify(newEvent);
     console.log(newEvent);
 
-  //   var request = $.ajax({
-  //       url: "/events",
-  //       method: "POST",
-  //       data: newEvent,
-  //       contentType: "application/json"
-  //     })
-  //     .done(function() {
-  //       alert("Event Created!");
-  //     })
-  //     .fail(function() {
-  //       alert("Please Check That All Fields Are Completed");
-  //     });
-  //
+    var request = $.ajax({
+        url: "/events",
+        method: "POST",
+        data: newEvent,
+        contentType: "application/json"
+      })
+      .done(function() {
+        alert("Event Created!");
+      })
+      .fail(function() {
+        alert("Please Check That All Fields Are Completed");
+      });
+  
   });
 
 });
