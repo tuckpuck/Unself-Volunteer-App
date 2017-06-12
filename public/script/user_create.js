@@ -1,12 +1,13 @@
 
 $( document ).ready(function() {
-  function User(first_name, last_name, email, phone, age, photo_url){
+  function User(first_name, last_name, email, phone, age, photo_url, password){
     this.first_name = first_name;
     this.last_name = last_name;
     this.email = email;
     this.phone = phone;
     this.age = age;
     this.photo_url = photo_url;
+    this.password = password;
   }
 
 
@@ -21,6 +22,7 @@ $( document ).ready(function() {
     newUser.phone = $('#phone').val() || null;
     newUser.age = $('#age').val() || null;
     newUser.photo_url = $('#photo_url').val() || null;
+    newUser.password = $('#user_password').val();
 
     newUser = JSON.stringify(newUser);
 
@@ -34,9 +36,8 @@ $( document ).ready(function() {
       alert( "Account Created" );
       window.location.href = "user_home.html";
     })
-    .fail(function() {
-      alert( "Email Already Exists" );
+    .fail(function(jqXHR, textStatus,errorThrown) {
+      alert(errorThrown);
     });
-
   });
 });
