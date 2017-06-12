@@ -38,7 +38,7 @@ app.use(function (req,res,next) {
   }
 });
 
-app.use('/token', token);
+app.use(token);
 app.use(roles);
 
 app.use((_req, res) => {
