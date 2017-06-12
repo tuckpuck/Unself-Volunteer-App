@@ -80,6 +80,10 @@ input[type="submit"]:hover {
 }
 
 /*user home*/
+.card {
+  margin: 30px 0px;
+}
+
 .display-3 {
   font-size: 1.7em;
   padding-top: 10px;
@@ -93,6 +97,10 @@ input[type="submit"]:hover {
 /* new_user */
 .form-control {
   margin-bottom: 10px;
+}
+/* Dynamic Events */
+.eventname {
+  text-decoration: underline;
 }
 
 /* Spacing */
