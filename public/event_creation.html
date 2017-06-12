@@ -20,19 +20,21 @@
   </nav>
 
   <div class="container-fluid">
-    <h1>Create Your Event</h1>
-    <form id="createEvent">
+    <div class="text-center topmargin40">
+    <h4>Create Your Event</h4>
+      </div>
+    <form class = "event col-md-6 offset-md-3 topmargin40" method = "post">
       <div class="form-group">
-        <label for="eventName">Event Name</label>
-        <input type="text" id="event-name" class="form-control" placeholder="">
+        <label for="eventName">Event Name: *</label>
+        <input type="text" id="event-name" class="form-control" required>
       </div>
       <div class="form-group">
-        <label for="eventDescription">Event Description</label>
-        <textarea class="form-control" id="event-description" rows="3"></textarea>
+        <label for="eventDescription">Event Description: *</label>
+        <textarea class="form-control" id="event-description" rows="3" required></textarea>
       </div>
       <div class="form-group">
-        <label for="eventCause">Event Cause</label>
-        <select class="form-control" id="event-cause">
+        <label for="eventCause">Event Cause: *</label>
+        <select class="form-control" id="event-cause" required>
         <option value= "" disable selected hidden>Select</option>
         <option>Homeless Pets</option>
         <option>Vets</option>
@@ -42,18 +44,19 @@
       </select>
       </div>
 
-      <label for="eventDate">Event Date</label>
+      <label for="eventDate">Event Date: *</label>
       <div class="input-group input-daterange">
-        <input type="text" id="start-date" class="form-control" placeholder="MM-DD-YYYY" value="">
+        <input type="text" id="start-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
         <div class="input-group-addon">to</div>
-        <input type="text" id="end-date" class="form-control" placeholder="MM-DD-YYYY" value="">
+        <input type="text" id="end-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
       </div>
-      <!-- <label for="eventTime">Event Time</label> -->
       <div class="row">
         <div class="col">
           <div class="form-group">
+
             <label for="startTime">Start Time</label>
             <select class="form-control start-time" id="start-time">
+
         <option value= "" disable selected hidden>Select</option>
         <option value= "12:00">12:00</option>
         <option value= "12:30">12:30</option>
@@ -63,8 +66,8 @@
         <div class="col">
           <div class="form-group">
             <label for="startTime"> &nbsp;</label>
-            <select class="form-control" id="ampmStart">
-        <option value= "" disable selected hidden>AM/PM</option>
+            <select class="form-control" id="ampmStart" required>
+        <option value= "" disable selected hidden >AM/PM</option>
         <option>AM</option>
         <option>PM</option>
       </select>
@@ -73,19 +76,21 @@
       </div>
       <div class="row">
         <div class="col">
-          <label for="endTime">End Time</label>
+          <label for="endTime">End Time: *</label>
           <div class="form-group">
+
             <select class="form-control end-time" id="end-time">
               <option value= "" disable selected hidden>Select</option>
               <option value= "12:00">12:00</option>
               <option value= "12:30">12:30</option>
             </select>
+
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="amPm">&nbsp;</label>
-            <select class="form-control" id="ampmEnd">
+            <select class="form-control" id="ampmEnd" required>
       <option value= "" disable selected hidden>AM/PM</option>
       <option>AM</option>
       <option>PM</option>
@@ -93,17 +98,17 @@
           </div>
         </div>
       </div>
-      <label for="eventAddress">Event Address</label>
-      <input type="text" class="form-control" id="street-address" placeholder="Street Address">
+      <label for="eventAddress">Event Address: *</label>
+      <input type="text" class="form-control" id="street-address" placeholder="Street Address" required>
       <!-- </div> -->
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" id="city" placeholder="City">
+          <input type="text" class="form-control" id="city" placeholder="City" required>
         </div>
         <div class="col">
           <div class="form-group">
-            <select class="form-control" id="state">
-            <option value= "" disable selected hidden>State</option>
+            <select class="form-control" id="state" required>
+            <option value= "" disable selected hidden >State</option>
             <option value="AL">Alabama</option>
            	<option value="AK">Alaska</option>
            	<option value="AZ">Arizona</option>
@@ -159,17 +164,21 @@
           </div>
         </div>
         <div class="col">
-          <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+          <input type="text" class="form-control" id="zipcode" placeholder="Zip Code" required>
         </div>
       </div>
       <label for="eventURL">Event URL</label>
       <input type="text" class="form-control" id="event-url" placeholder="Event URL">
       <label for="eventPhoto">Event Photo</label>
       <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
+
       <div class="row container">
-        <button class="btn btn-outline-success margin10 col-1" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
+        <button class="btn btn-outline-success margin10 col-4" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
       </div>
-      <input class="btn btn-primary btn-lg" id="organizer-submit" type="submit" value="Submit">
+      <p>* denotes a required field</p>
+      <div class="text-center topmargin40">
+        <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+      </div>
     </form>
     <div class="row">
 
@@ -210,6 +219,9 @@
       </div>
     </div>
     </div>
+
+
+
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->
