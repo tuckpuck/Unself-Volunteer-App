@@ -20,6 +20,7 @@ const token = require('./routes/token');
 const jwt = require('jsonwebtoken');
 
 app.use(users);
+app.use(organizations);
 
 app.use(function (req,res,next) {
   if (req.cookies.token) {
@@ -38,7 +39,6 @@ app.use(function (req,res,next) {
 });
 
 app.use('/token', token);
-app.use(organizations);
 app.use(roles);
 
 app.use((_req, res) => {

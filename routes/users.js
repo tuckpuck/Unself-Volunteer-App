@@ -20,7 +20,7 @@ router.post('/users', function(req, res, next) {
   }
 
   knex('user_auth')
-    .select('user_id')
+    .select('email')
     .where('email', newUser.email)
     .then(function(data) {
       if (data.length > 0) {
@@ -50,7 +50,6 @@ router.post('/users', function(req, res, next) {
                 return knex('user_auth')
                   .transacting(t)
                   .insert({
-                    user_id: insertedUser.id,
                     email: insertedUser.email,
                     hashed_password: newUser.hashed_password
                   });
