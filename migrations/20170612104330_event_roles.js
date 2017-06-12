@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.string("end_time", 50).notNullable();
     table.integer("number_needed").notNullable();
     table.integer("role_id").references("id").inTable("roles").notNullable();
-    table.integer("event_id").references("id").inTable("events").notNullable();
+    table.integer("event_id").references("id").inTable("events");
   });
 };
 
