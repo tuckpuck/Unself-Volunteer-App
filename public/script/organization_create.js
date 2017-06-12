@@ -1,33 +1,35 @@
 
 $( document ).ready(function() {
-  function Organization(name, phone, email, website, description, photo_url){
+  function Organization(name, phone, email, website, description, photo_url,password){
     this.name = org_name;
     this.phone = org_phone;
     this.email = org_email;
     this.web_url = org_website;
     this.description = org_description;
     this.photo_url = org_photo_url;
+    this.password = password;
   }
 
 
   $('.organization').on('submit', function(event){
     event.preventDefault();
 
-    var newOrganization = new Organization();
+    var newOrg = new Organization();
 
-    newOrganization.name = $('#org_name').val();
-    newOrganization.phone = $('#org_phone').val() || null;
-    newOrganization.email = $('#org_email').val() || null;
-    newOrganization.web_url = $('#org_website').val() || null;
-    newOrganization.description = $('#org_description').val() || null;
-    newOrganization.photo_url = $('#org_photo_url').val() || null;
+    newOrg.name = $('#org_name').val();
+    newOrg.phone = $('#org_phone').val() || null;
+    newOrg.email = $('#org_email').val() || null;
+    newOrg.web_url = $('#org_website').val() || null;
+    newOrg.description = $('#org_description').val() || null;
+    newOrg.photo_url = $('#org_photo_url').val() || null;
+    newOrg.password = $('#org_password').val();
 
-    newOrganization = JSON.stringify(newOrganization);
+    newOrg = JSON.stringify(newOrg);
 
     var request = $.ajax({
       url: "/organizations",
       method: "POST",
-      data: newOrganization,
+      data: newOrg,
       contentType: "application/json"
     })
     .done(function() {
