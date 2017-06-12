@@ -96,6 +96,9 @@ input[type="submit"]:hover {
 }
 
 /* Spacing */
+.margin10 {
+  margin-bottom: 10px;
+}
 
 .topmargin150 {
   margin-top: 150px;
