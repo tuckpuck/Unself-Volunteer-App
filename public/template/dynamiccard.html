@@ -53,32 +53,46 @@
       photo_url: "http://boulderrunning.com/word/wp-content/uploads/BolderBoulder_SaraSlattery.jpg"
     }
 
-    function populateCard(eventObject) {
-      let $el = $('<div class="card">' + '<a href = "" class="eventlink">' + '<div class="text-center">'  + '<img class="eventimg card-img-top" src="" alt="Card image cap">' + '</div>' + '<div class="card-block">' + '<p class="eventname text-center"></p>' +
-      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '</div>' + '</div>' + '</a>');
+    let farmersMarket = {
+      id: 2,
+      name: "Boulder Farmer's Market",
+      street_address: "13th Street",
+      city_id: "Boulder",
+      zip_code: 80302,
+      start_date: "June 14",
+      end_date: "June 14",
+      start_time: "4pm",
+      end_time: "8pm",
+      description: "Local vendors offering produce, plants, crafts & eats every Saturday, April through November",
+      event_url: "http://www.bcfm.org/",
+      photo_url: "http://images1.westword.com/imager/u/original/7411962/union-station-market.jpg"
+    }
 
-      $el.find(".eventlink").attr("href", boulderBoulder.event_url);
-      $el.find(".eventimg").attr("src", boulderBoulder.photo_url);
-      $el.find(".eventname").text(boulderBoulder.name);
-      if (boulderBoulder.start_date === boulderBoulder.end_date) {
-        $el.find(".eventdescription").text(boulderBoulder.description);
-      $el.find(".eventdate").text("Date: " + boulderBoulder.start_date);
+    function populateCard(eventObj) {
+      let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Card image cap"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
+      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '</div>' + '</div>');
+
+      $el.find(".eventlink").attr("href", eventObj.event_url);
+      $el.find(".eventpic").attr("href", eventObj.photo_url);
+      $el.find(".eventimg").attr("src", eventObj.photo_url);
+      $el.find(".eventname").text(eventObj.name);
+      if (eventObj.start_date === eventObj.end_date) {
+        $el.find(".eventdescription").text(eventObj.description);
+      $el.find(".eventdate").text("Date: " + eventObj.start_date);
       } else {
-      $el.find(".eventdate").text("Date: " + boulderBoulder.start_date + " to " + boulderBoulder.end_date);
+      $el.find(".eventdate").text("Date: " + eventObj.start_date + " to " + eventObj.end_date);
     };
-      if (boulderBoulder.start_time === boulderBoulder.end_time) {
-      $el.find(".eventtime").text("Time: " + boulderBoulder.start_time);
+      if (eventObj.start_time === eventObj.end_time) {
+      $el.find(".eventtime").text("Time: " + eventObj.start_time);
       } else {
-      $el.find(".eventtime").text("Time: " + boulderBoulder.start_time + " to " + boulderBoulder.end_time);
+      $el.find(".eventtime").text("Time: " + eventObj.start_time + " to " + eventObj.end_time);
     };
-    $el.find(".eventlocation").text("Location: " + boulderBoulder.street_address + ", " + boulderBoulder.city_id + " " + boulderBoulder.zip_code);
-
-
+    $el.find(".eventlocation").text("Location: " + eventObj.street_address + ", " + eventObj.city_id + " " + eventObj.zip_code);
       $('#append').append($el);
     }
 
     populateCard(boulderBoulder);
-    populateCard(boulderBoulder);
+    populateCard(farmersMarket);
 
   </script>
 </body>

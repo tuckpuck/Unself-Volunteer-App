@@ -101,6 +101,13 @@ input[type="submit"]:hover {
 /* Dynamic Events */
 .card {
   line-height: .9;
+  background-color: #eee;
+}
+
+.card:hover {
+-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 }
 
 .eventimg {
@@ -115,6 +122,10 @@ input[type="submit"]:hover {
 .eventname {
   text-decoration: underline;
   font-size: 1.3em;
+}
+
+.eventname:hover {
+  color: rgb(0, 118, 157);
 }
 
 /* Spacing */
