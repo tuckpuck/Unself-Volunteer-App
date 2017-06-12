@@ -99,8 +99,22 @@ input[type="submit"]:hover {
   margin-bottom: 10px;
 }
 /* Dynamic Events */
+.card {
+  line-height: .9;
+}
+
+.eventimg {
+  margin: 0 auto;
+  margin-top: 13px;
+}
+
+.eventdescription {
+  line-height: 1.1;
+}
+
 .eventname {
   text-decoration: underline;
+  font-size: 1.3em;
 }
 
 /* Spacing */
