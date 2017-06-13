@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 var knex = require('../knex');
 const bcrypt = require('bcrypt');
 
@@ -46,6 +47,13 @@ router.post('/organizations', function(req,res,next){
             }).returning('*')
             .then(function(org_data) {
               insertedOrg = org_data[0];
+              let token = {
+                user_id: null,
+                organization_id: insertedOrg.id,
+                email: insertedOrg.email
+              };
+              console.log(token);
+                res.cookie('token3',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
               return knex('user_auth')
                 .transacting(t)
                 .insert({
