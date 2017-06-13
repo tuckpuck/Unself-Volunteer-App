@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   })
   .fail(function() {
-    alert("Failed to get events");
+    console.log("Failed to get events");
   });
 
   function populateCard(eventObj) {
