@@ -33,7 +33,6 @@ $( document ).ready(function() {
       contentType: "application/json"
     })
     .done(function() {
-      alert( "Account Created" );
       window.location.href = "organization_home.html";
     })
     .fail(function() {

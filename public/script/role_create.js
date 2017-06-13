@@ -25,17 +25,17 @@ $( document ).ready(function() {
       contentType: "application/json"
     })
     .done(function() {
-      $('.container-fluid').append($(`<div class="alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+      res.sendStatus(200);
+    })
+    .fail(function() {
+      $('#required').append($(`<div class="alert alert-danger  fade show alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
       </button>
-      Bad email or password
+      Organization Already Exists
       </div>
       `));
-      $('.alert alert-warning').alert();
-    })
-    .fail(function() {
-      alert( "Role Already Exists" );
+      $('.alert alert-danger').alert();
     });
   });
 });
