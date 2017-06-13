@@ -5,6 +5,13 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const knex = require('../knex');
 
+router.use(function (req,res,next) {
+  if (req.user) {
+    return next();
+  }
+  res.sendStatus(401);
+});
+
 router.post('/roles', function(req,res,next){
   var newRole = req.body;
   knex('roles')
