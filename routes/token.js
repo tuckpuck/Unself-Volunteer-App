@@ -29,7 +29,7 @@ router.post('/token', function (req,res,next) {
     return res.status(400).send('Password must not be blank');
   }
 
-  knex.select('users.id AS user_id','organizations.id AS organizations_id','user_auth.email','user_auth.hashed_password')
+  knex.select('users.id AS user_id','organizations.id AS organization_id','user_auth.email','user_auth.hashed_password')
   .from('user_auth')
   .leftJoin('users', 'user_auth.email', 'users.email')
   .leftJoin('organizations', 'user_auth.email','organizations.email')
