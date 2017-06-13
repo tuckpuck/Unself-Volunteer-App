@@ -44,7 +44,6 @@ $(document).ready(function() {
         contentType: "application/json"
       })
       .done(function() {
-        alert("Event Created");
         window.location.href = "event_roles.html";
       })
       .fail(function() {
