@@ -1,7 +1,17 @@
 $(document).ready(function() {
 
+  var origin = $('body').data("origin");
+  console.log(origin);
+  var url = "/events";
+
+  if(origin !== "all")
+  {
+    url = url + "/" + origin;
+  }
+
+  console.log(url);
   var request = $.ajax({
-    url: "/events",
+    url: url,
     method: "GET",
     contentType: "application/json"
   })
@@ -24,20 +34,34 @@ $(document).ready(function() {
       };
       populateCard(newEvent);
     }
-
+    if(data.length > 0){
+      $("#no_events").css("display", "none");
+    }
+    else{
+      $("#no_events").css("display", "block");
+    }
   })
   .fail(function() {
-    alert("Failed to get events");
+    $("#no_events").css("display", "block");
+    console.log("Failed to get events");
   });
 
   function populateCard(eventObj) {
-    let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Card image cap"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
+    let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Volunteer Event Picture"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
     '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="streetaddress card-text inline-block"></p>' + '<p class="eventcity card-text inline-block"></p>' + '<a class="eventwebsite card-text block" href = "">Visit the Website</a>'+ '</div>' + '</div>');
 
 // This top one is the one to change to our event page
     $el.find(".eventlink").attr("href", eventObj.event_url);
-    $el.find(".eventpic").attr("href", eventObj.photo_url);
+
+console.log(eventObj);
+  if (eventObj.photo_url == "") {
+    $el.find(".eventimg").attr("src", "img/happyvolunteers.jpg");
+    $el.find(".eventpic").attr("href", "img/happyvolunteers.jpg");
+  } else {
     $el.find(".eventimg").attr("src", eventObj.photo_url);
+    $el.find(".eventpic").attr("href", eventObj.photo_url);
+  }
+
     $el.find(".eventname").text(eventObj.name);
     if (eventObj.start_date === eventObj.end_date) {
       $el.find(".eventdescription").text(eventObj.description);
