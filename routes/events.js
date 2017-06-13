@@ -12,7 +12,7 @@ router.get('/events', function(req, res, next){
   var newEvent = req.body;
   knex('events')
   .then(function(data){
-    return res.send(data[0]);
+    return res.send(data);
   });
 });
 
