@@ -1,7 +1,17 @@
 $(document).ready(function() {
 
+  var origin = $('body').data("origin");
+  console.log(origin);
+  var url = "/events";
+
+  if(origin !== "all")
+  {
+    url = url + "/" + origin;
+  }
+
+  console.log(url);
   var request = $.ajax({
-    url: "/events",
+    url: url,
     method: "GET",
     contentType: "application/json"
   })
@@ -24,10 +34,16 @@ $(document).ready(function() {
       };
       populateCard(newEvent);
     }
-
+    if(data.length > 0){
+      $("#no_events").css("display", "none");
+    }
+    else{
+      $("#no_events").css("display", "block");
+    }
   })
   .fail(function() {
-    alert("Failed to get events");
+    $("#no_events").css("display", "block");
+    console.log("Failed to get events");
   });
 
   function populateCard(eventObj) {
