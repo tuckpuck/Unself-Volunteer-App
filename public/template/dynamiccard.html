@@ -71,8 +71,9 @@
 
     function populateCard(eventObj) {
       let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Card image cap"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
-      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '</div>' + '</div>');
+      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '<a class="eventwebsite card-text" href = "">Visit the Website</a>'+ '</div>' + '</div>');
 
+// This top one is the one to change to our event page
       $el.find(".eventlink").attr("href", eventObj.event_url);
       $el.find(".eventpic").attr("href", eventObj.photo_url);
       $el.find(".eventimg").attr("src", eventObj.photo_url);
@@ -90,7 +91,9 @@
     };
     $el.find(".eventlocation").text("Location: " + eventObj.street_address + ", " + eventObj.city_id + " " + eventObj.zip_code);
       $('#append').append($el);
-    }
+      $el.find(".eventwebsite").attr("href", eventObj.event_url);
+    };
+
 
     populateCard(boulderBoulder);
     populateCard(farmersMarket);
