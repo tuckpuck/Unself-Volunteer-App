@@ -13,6 +13,9 @@ router.post('/events', function(req,res,next){
   var newEvent = req.body;
   if (req.cookies.token) {
     jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
+      if (err) {
+        console.log(err);
+      }
       newEvent.organization_id = decoded.organizations_id;
     });
   }
