@@ -28,6 +28,10 @@ router.post('/organizations', function(req,res,next){
       res.setHeader('Content-Type', 'text/plain');
       return res.status(400).send('Email already exists');
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6ebe62470abd7d82342fc671a5c8f750f4a7f4c
     bcrypt.hash(newOrg.password, 10, function(err, hash) {
       if (err) {
         console.error(err);
