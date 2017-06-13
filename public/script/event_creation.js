@@ -31,8 +31,7 @@ $(document).ready(function() {
       //city: $('#city').val(),
       zip_code: $('#zipcode').val(),
       photo_url: $('#event-url').val(),
-      event_url: $('#photo-url').val(),
-      organization_id: 1
+      event_url: $('#photo-url').val()
     };
 
     newEvent = JSON.stringify(newEvent);

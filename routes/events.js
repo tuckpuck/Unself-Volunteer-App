@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 var knex = require('../knex');
 
 router.use(cookieParser());
@@ -19,6 +20,14 @@ router.get('/events', function(req, res, next){
 
 router.post('/events', function(req,res,next){
   var newEvent = req.body;
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
+      if (err) {
+        console.log(err);
+      }
+      newEvent.organization_id = decoded.organizations_id;
+    });
+  }
   knex('events')
   .select()
   .where('name', newEvent.name)
