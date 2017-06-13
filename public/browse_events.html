@@ -39,68 +39,8 @@
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="script/events.js"></script>
+  <script src="script/event_display.js"></script>
 
-  <script>
-    let boulderBoulder = {
-      id: 1,
-      name: "boulderBoulder",
-      street_address: "5500 Central Avenue",
-      city_id: "Boulder",
-      zip_code: 80305,
-      start_date: "May 29",
-      end_date: "May 29",
-      start_time: "1pm",
-      end_time: "4pm",
-      description: "A well-established and much-loved Boulder 10k Memorial Day Event!",
-      event_url: "http://www.bolderboulder.com",
-      photo_url: "http://boulderrunning.com/word/wp-content/uploads/BolderBoulder_SaraSlattery.jpg"
-    }
-
-    let farmersMarket = {
-      id: 2,
-      name: "Boulder Farmer's Market",
-      street_address: "13th Street",
-      city_id: "Boulder",
-      zip_code: 80302,
-      start_date: "June 14",
-      end_date: "June 14",
-      start_time: "4pm",
-      end_time: "8pm",
-      description: "Local vendors offering produce, plants, crafts & eats every Saturday, April through November",
-      event_url: "http://www.bcfm.org/",
-      photo_url: "http://images1.westword.com/imager/u/original/7411962/union-station-market.jpg"
-    }
-
-    function populateCard(eventObj) {
-      let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Card image cap"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
-      '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="eventlocation card-text"></p>' + '<a class="eventwebsite card-text" href = "">Visit the Website</a>'+ '</div>' + '</div>');
-
-// This top one is the one to change to our event page
-      $el.find(".eventlink").attr("href", eventObj.event_url);
-      $el.find(".eventpic").attr("href", eventObj.photo_url);
-      $el.find(".eventimg").attr("src", eventObj.photo_url);
-      $el.find(".eventname").text(eventObj.name);
-      if (eventObj.start_date === eventObj.end_date) {
-        $el.find(".eventdescription").text(eventObj.description);
-      $el.find(".eventdate").text("Date: " + eventObj.start_date);
-      } else {
-      $el.find(".eventdate").text("Date: " + eventObj.start_date + " to " + eventObj.end_date);
-    };
-      if (eventObj.start_time === eventObj.end_time) {
-      $el.find(".eventtime").text("Time: " + eventObj.start_time);
-      } else {
-      $el.find(".eventtime").text("Time: " + eventObj.start_time + " to " + eventObj.end_time);
-    };
-    $el.find(".eventlocation").text("Location: " + eventObj.street_address + ", " + eventObj.city_id + " " + eventObj.zip_code);
-      $('#append').append($el);
-      $el.find(".eventwebsite").attr("href", eventObj.event_url);
-    };
-
-
-    populateCard(boulderBoulder);
-    populateCard(farmersMarket);
-
-  </script>
 </body>
 
 </html>
