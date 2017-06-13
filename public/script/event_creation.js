@@ -30,8 +30,9 @@ $(document).ready(function() {
       street_address: $('#street-address').val(),
       //city: $('#city').val(),
       zip_code: $('#zipcode').val(),
-      photo_url: $('#event-url').val(),
-      event_url: $('#photo-url').val()
+      photo_url: $('#photo-url').val(),
+      event_url: $('#event-url').val(),
+      organization_id: 1
     };
 
     newEvent = JSON.stringify(newEvent);

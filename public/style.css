@@ -35,6 +35,14 @@ input[type="submit"]:hover {
   height: 35px;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
 /* Index Page */
 .homebtn {
   margin: 3px;
