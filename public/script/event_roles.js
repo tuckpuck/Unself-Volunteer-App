@@ -29,7 +29,7 @@ $(document).ready(function() {
       }
     })
     .fail(function() {
-      alert("No Roles Found!");
+      console.log("No Roles Found!");
     });
   })();
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
         $('#roleTable').append(currentRole);
       })
       .fail(function() {
-        alert("Please Check That All Fields Are Completed");
+        console.log("Please Check That All Fields Are Completed");
       });
 
   });
