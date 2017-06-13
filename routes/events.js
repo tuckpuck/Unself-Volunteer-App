@@ -18,14 +18,24 @@ router.get('/events', function(req, res, next){
 });
 
 
+router.get('/events/org', function(req, res, next){
+  var newEvent = req.body;
+  var tokenInfo = getTokenInfo(req);
+  if (tokenInfo) {
+    knex('events')
+    .where('organization_id', tokenInfo.organization_id)
+    .then(function(data){
+      return res.send(data);
+    });
+  }
+});
+
+
 router.post('/events', function(req,res,next){
   var newEvent = req.body;
-  if (req.cookies.token) {
-    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
-      if (err) {
-        console.log(err);
-      }
-    newEvent.organization_id = decoded.organization_id;
+  var tokenInfo = getTokenInfo(req);
+  if (tokenInfo) {
+    newEvent.organization_id = tokenInfo.organization_id;
     knex('events')
     .select()
     .where('name', newEvent.name)
@@ -42,8 +52,19 @@ router.post('/events', function(req,res,next){
         return res.send(data[0]);
       });
     });
-  });
-}
+  }
 });
+
+function getTokenInfo(req) {
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
+      if (err) {
+        console.log(err);
+        return;
+      }
+    return decoded;
+    });
+  }
+}
 
 module.exports = router;
