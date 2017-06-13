@@ -53,7 +53,7 @@ router.post('/organizations', function(req,res,next){
                 email: insertedOrg.email
               };
               console.log(token);
-                res.cookie('token3',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
+                res.cookie('token',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
               return knex('user_auth')
                 .transacting(t)
                 .insert({

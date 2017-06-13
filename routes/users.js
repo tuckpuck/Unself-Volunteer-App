@@ -54,7 +54,7 @@ router.post('/users', function(req, res, next) {
                   email: insertedUser.email
                 };
                 console.log(token);
-                  res.cookie('token1',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
+                  res.cookie('token',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
                 return knex('user_auth')
                   .transacting(t)
                   .insert({
