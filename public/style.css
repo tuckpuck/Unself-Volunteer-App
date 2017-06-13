@@ -7,14 +7,14 @@ body {
 }
 
 a {
-  color: black;
+  color: #292B2C;
   text-decoration: none;
   margin: none;
   padding: none;
 }
 
 a:hover {
-  color: black;
+  color: #292B2C;
   text-decoration: none;
 }
 
@@ -126,6 +126,10 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 
 .eventname:hover {
   color: rgb(0, 118, 157);
+}
+
+.eventwebsite:hover {
+  text-decoration: underline;
 }
 
 /* Spacing */
