@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(cookieParser());
 
 const users = require('./routes/users');
 const organizations = require('./routes/organizations');
@@ -21,6 +22,7 @@ const jwt = require('jsonwebtoken');
 
 app.use(users);
 app.use(organizations);
+app.use(token);
 
 app.use(function (req,res,next) {
   if (req.cookies.token) {
@@ -38,7 +40,6 @@ app.use(function (req,res,next) {
   }
 });
 
-app.use(token);
 app.use(roles);
 
 app.use((_req, res) => {
