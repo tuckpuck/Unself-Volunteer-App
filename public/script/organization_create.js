@@ -37,7 +37,14 @@ $( document ).ready(function() {
       window.location.href = "organization_home.html";
     })
     .fail(function() {
-      alert( "Organization Already Exists" );
+      $('#required').append($(`<div class="alert alert-danger  fade show alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      Organization Already Exists
+      </div>
+      `));
+      $('.alert alert-danger').alert();
     });
   });
 });

@@ -29,7 +29,7 @@ $(document).ready(function() {
         }
       })
       .fail(function() {
-        $('.container-fluid').append($(`<div class="alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+        $('.container-fluid').append($(`<div class="alert alert-danger alert-dismissible fade show col-6 offset-3 col-md-4 offset-md-4 " role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
