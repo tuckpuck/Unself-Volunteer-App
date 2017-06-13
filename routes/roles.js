@@ -34,7 +34,7 @@ router.post('/roles', function(req,res,next){
 
 router.get('/roles', function(req,res,next){
   knex('roles')
-  .select('name')
+  .select('name', 'id', 'description')
   // .where('organization_id', 'organizations.id')
   .then(function(data){
     if(data.length < 0){
