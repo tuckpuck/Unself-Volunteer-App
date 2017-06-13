@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  function Auth(email,password) {
+  function Auth(email, password) {
     this.email = email;
     this.password = password;
   }
@@ -22,17 +22,22 @@ $(document).ready(function() {
       })
 
       .done(function(data) {
-        if (data.user_id === null){
+        if (data.user_id === null) {
           window.location.href = "organization_home.html";
-        }
-        else{
+        } else {
           window.location.href = "user_home.html";
         }
       })
       .fail(function() {
-        alert("Bad Email or Password");
+        $('.container-fluid').append($(`<div class="alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        Bad email or password
+        </div>
+        `));
+        $('.alert alert-warning').alert();
       });
-
   });
 
 });

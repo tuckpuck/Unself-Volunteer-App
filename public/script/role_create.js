@@ -25,7 +25,14 @@ $( document ).ready(function() {
       contentType: "application/json"
     })
     .done(function() {
-      alert( "Role Created" );
+      $('.container-fluid').append($(`<div class="alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      Bad email or password
+      </div>
+      `));
+      $('.alert alert-warning').alert();
     })
     .fail(function() {
       alert( "Role Already Exists" );
