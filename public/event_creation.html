@@ -172,63 +172,12 @@
       <label for="eventPhoto">Event Photo</label>
       <input type="text" class="form-control" id="photo-url" placeholder="Photo URL">
 
-      <label for="">Roles</label>
-      <div class="row container">
-        <div class="card margin10">
-        <ul id="roleTable" class="list-group list-group-flush">
-          <!-- <li class="list-group-item"></li> -->
-        </ul>
-      </div>
-      </div>
-      <button class="btn btn-outline-success margin10 col-4" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
       <p>* denotes a required field</p>
       <div class="text-center topmargin40">
         <input class="btn btn-primary btn-lg" type="submit" value="Submit">
       </div>
     </form>
     <div class="row">
-
-
-      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content container">
-            <h1>Add Role</h1>
-            <form id="add-role">
-              <div class="col">
-                <label class="roles" for="roles">Select Role</label>
-                <select id="role" class="form-control select-roles col-6" name="select-roles">
-                  <option value= "" disable selected hidden>Select</option>
-                </select>
-              </div>
-              <div class="col">
-                <label for="eventDate">Event Date: *</label>
-                <div class="input-group input-daterange">
-                  <input type="text" id="s-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
-                  <div class="input-group-addon">to</div>
-                  <input type="text" id="e-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
-                </div>
-                <label for="startTime">Start Time</label>
-                <div class="form-group">
-                  <select class="form-control start-time" id="s-time">
-                    <option value= "" disable selected hidden>Select</option>
-                    <option value= "12:00">12:00</option>
-                    <option value= "12:30">12:30</option>
-                  </select>
-                  <label for="endTime">End Time</label>
-                  <select class="form-control end-time" id="e-time">
-                    <option value= "" disable selected hidden>Select</option>
-                    <option value= "12:00">12:00</option>
-                    <option value= "12:30">12:30</option>
-                  </select>
-                  <label for="number_needed">Number Needed</label>
-                  <input class="form-control" type="number" name="number_needed" id="number_needed">
-                  <button id="role-submit" type="submit" class="btn btn-outline-success margin10 col-1" name="button">Add</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
     </div>
 

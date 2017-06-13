@@ -10,12 +10,13 @@ const users = require('./routes/users');
 const organizations = require('./routes/organizations');
 const roles = require('./routes/roles');
 const eventRoles = require('./routes/event_roles');
-
+const events = require('./routes/events');
 
 app.use(users);
 app.use(organizations);
 app.use(roles);
 app.use(eventRoles);
+app.use(events);
 
 app.use((_req, res) => {
   res.sendStatus(404);
