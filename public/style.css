@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+body, button, input, optgroup, select, textarea {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -18,6 +18,10 @@ a:hover {
   text-decoration: none;
 }
 
+form {
+  padding-bottom: 20px;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -31,9 +35,13 @@ input[type="submit"]:hover {
   height: 35px;
 }
 
+/* Index Page */
+.homebtn {
+  margin: 3px;
+  border: 1px solid #292B2C;
+}
 
-/*Sign In Page*/
-
+/* Sign In Page */
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -98,7 +106,7 @@ input[type="submit"]:hover {
 .form-control {
   margin-bottom: 10px;
 }
-/* Dynamic Events */
+/* Event Cards */
 .card {
   line-height: .9;
   background-color: #eee;
@@ -153,14 +161,14 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   margin-top: 40px;
 }
 
+.topmargin20 {
+  margin-top: 20px;
+}
+
 .topmargin10 {
   margin-top: 10px;
 }
 
 .allmargin20 {
   margin: 20px;
-}
-
-form{
-  padding-bottom: 20px;
 }

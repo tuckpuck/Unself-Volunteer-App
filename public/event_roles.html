@@ -23,23 +23,27 @@
   </nav>
 
 <div class="container-fluid">
-  <div class="row container">
-    <label for="">Roles</label>
-    <div class="card margin10">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="display-3 topmargin40">Event Roles:</h1>
+    <div class="card topmargin20">
     <ul id="roleTable" class="list-group list-group-flush">
 
     </ul>
+    </div>
   </div>
   </div>
-  <button class="btn btn-outline-success margin10 col-4" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
 
+<div class="text-center">
+  <button class="btn btn-info margin10 col-md-6 offset-md-3 homebtn" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
+  </div>
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content container">
-        <h1>Add Role</h1>
+        <h1 class="text-sm-center topmargin40">New Role</h1>
         <form id="add-role">
           <label class="roles" for="roles">Select Role</label>
-          <select id="role" class="form-control select-roles col-6" name="select-roles">
+          <select id="role" class="form-control select-roles" name="select-roles">
             <option value= "" disable selected hidden>Select</option>
           </select>
           <div class="row container">
@@ -85,7 +89,9 @@
           </div>
               <label for="number_needed">Number Needed</label>
               <input class="form-control" type="number" name="number_needed" id="number_needed">
-              <button id="role-submit" type="submit" class="btn btn-outline-success margin10 col-1" name="button">Add</button>
+              <div class="text-center">
+              <button id="role-submit" type="submit" class="btn btn-outline-success topmargin20" name="button">Add Role</button>
+              </div>
             </div>
 
         </form>
