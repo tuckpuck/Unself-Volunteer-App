@@ -29,15 +29,15 @@ router.post('/token', function (req,res,next) {
     return res.status(400).send('Password must not be blank');
   }
 
-  knex.select()
+  knex.select('users.id AS user_id','organizations.id AS organizations_id','user_auth.email','user_auth.hashed_password')
   .from('user_auth')
-  .join('users', 'user_auth.user_id', 'users.user_id')
-  .leftJoin('organizations', 'users.organization_id', 'organizations.organization_id')
-  .where('email', body.email)
+  .leftJoin('users', 'user_auth.email', 'users.email')
+  .leftJoin('organizations', 'user_auth.email','organizations.email')
+  .where('user_auth.email', body.email)
   .then(function(users){
     if(users.length === 0){
       res.setHeader('Content-Type', 'text/plain');
-      return res.status(400).send('Bad email or password');
+      return res.status(400).send('Bad email');
     }
     bcrypt.compare(body.password, users[0].hashed_password, function(err, result) {
       if(result === true){
@@ -49,7 +49,7 @@ router.post('/token', function (req,res,next) {
       }
       else{
         res.setHeader('Content-Type', 'text/plain');
-        return res.status(400).send('Bad email or password');
+        return res.status(400).send('Bad password');
       }
     });
   });
