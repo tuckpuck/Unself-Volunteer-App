@@ -49,7 +49,6 @@ $(document).ready(function() {
     newEvent.zip_code = $('#zipcode').val();
     newEvent.event_url = $('#event-url').val();
     newEvent.photo_url = $('#photo-url').val();
-    newEvent.organization_id = 1;
 
     newEvent = JSON.stringify(newEvent);
 
