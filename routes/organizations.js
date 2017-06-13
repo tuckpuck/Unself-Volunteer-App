@@ -4,66 +4,22 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 var knex = require('../knex');
-const bcrypt = require('bcrypt');
 
 router.post('/organizations', function(req,res,next){
   var newOrg = req.body;
-  var insertedOrg = {};
-  if (!newOrg.email) {
-    res.setHeader('Content-Type', 'text/plain');
-    return res.status(400).send('Email must not be blank');
-  }
-
-  if (!newOrg.password || newOrg.password.length < 8) {
-    res.setHeader('Content-Type', 'text/plain');
-    return res.status(400).send('Password must be at least 8 characters long');
-  }
-
   knex('organizations')
-  .select('email')
-  .where('email', newOrg.email)
+  .select('id')
+  .where('name', newOrg.name)
   .then(function(data){
     if(data.length > 0){
       res.setHeader('Content-Type', 'text/plain');
       return res.status(400).send('Email already exists');
     }
-    bcrypt.hash(newOrg.password, 10, function(err, hash) {
-      if (err) {
-        console.error(err);
-      }
-      newOrg.hashed_password = hash;
-      delete newOrg.password;
-      knex.transaction(function(t) {
-          return knex('organizations')
-            .transacting(t)
-            .insert({
-              name: newOrg.name,
-              email: newOrg.email,
-              phone: newOrg.phone,
-              description: newOrg.description,
-              web_url: newOrg.web_url,
-              photo_url: newOrg.photo_url
-            }).returning('*')
-            .then(function(org_data) {
-              insertedOrg = org_data[0];
-              return knex('user_auth')
-                .transacting(t)
-                .insert({
-                  email: insertedOrg.email,
-                  hashed_password: newOrg.hashed_password
-                });
-            })
-            .then(t.commit)
-            .catch(t.rollback);
-        })
-        .then(function() {
-          res.setHeader('Content-Type', 'application/json');
-          let stringData = JSON.stringify(insertedOrg);
-          return res.send(stringData);
-        })
-        .catch(function(e) {
-          return res.sendStatus(500);
-        });
+    knex('organizations')
+    .insert(newOrg, '*' )
+    .then(function(data){
+      res.setHeader('Content-Type', 'application/json');
+      return res.send(data[0]);
     });
   });
 });
