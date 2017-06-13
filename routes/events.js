@@ -16,6 +16,36 @@ router.get('/events', function(req, res, next){
   });
 });
 
+router.get('/events/user', function(req, res, next){
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
+      if (err) {
+        console.log(err);
+        return;
+      }
+      knex('events')
+      .select(
+        'event.id',
+        'event.name',
+        'event.descrition',
+        'event.start_date',
+        'event.end_date',
+        'event.start_time',
+        'event.end_time',
+        'event.street_address',
+        'event.zip_code',
+        'event.photo_url',
+        'event.event_url')
+      .join('event_roles', 'events.id', 'event_roles.event_id')
+      .join('user_event_roles', 'event_roles.id', 'user_event_roles.event_role_id')
+      .where('user_id', decoded.user_id)
+      .then(function(data){
+        return res.send(data);
+      });
+    });
+  }
+});
+
 
 router.get('/events/org', function(req, res, next){
   if (req.cookies.token) {
