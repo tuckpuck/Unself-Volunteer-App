@@ -53,7 +53,6 @@ router.post('/users', function(req, res, next) {
                   organization_id: null,
                   email: insertedUser.email
                 };
-                console.log(token);
                   res.cookie('token',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
                 return knex('user_auth')
                   .transacting(t)
