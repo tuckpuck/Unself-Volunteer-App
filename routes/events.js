@@ -25,7 +25,7 @@ router.post('/events', function(req,res,next){
       if (err) {
         console.log(err);
       }
-      newEvent.organization_id = decoded.organizations_id;
+      newEvent.organization_id = decoded.organization_id;
     });
   }
   knex('events')
