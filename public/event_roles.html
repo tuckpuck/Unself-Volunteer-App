@@ -61,7 +61,7 @@
           </div>
           <div class="form-group">
           <div class="row container">
-              <select class="form-control start-time col-10" id="s-time">
+              <select class="form-control start-time col-10" id="s-time" required>
                 <option value= "" disable selected hidden>Select</option>
                 <option value= "12:00">12:00</option>
                 <option value= "12:30">12:30</option>
@@ -76,7 +76,7 @@
             <label for="endTime">End Time</label>
           </div>
           <div class="row container">
-            <select class="form-control end-time col-10" id="e-time">
+            <select class="form-control end-time col-10" id="e-time" required>
               <option value= "" disable selected hidden>Select</option>
               <option value= "12:00">12:00</option>
               <option value= "12:30">12:30</option>
@@ -88,7 +88,7 @@
             </select>
           </div>
               <label for="number_needed">Number Needed</label>
-              <input class="form-control" type="number" name="number_needed" id="number_needed">
+              <input class="form-control" type="number" name="number_needed" id="number_needed" required>
               <div class="text-center">
               <button id="role-submit" type="submit" class="btn btn-outline-success topmargin20" name="button">Add Role</button>
               </div>
