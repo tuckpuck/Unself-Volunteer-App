@@ -1,5 +1,22 @@
 $(document).ready(function() {
-  
+
+  $(function() {
+    for (let i = 1; i <= 11; i++) {
+      $('.start-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      if (i % 2 === 0 || i % 1 === 0) {
+        $('.start-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+      }
+    }
+  });
+  $(function() {
+    for (let i = 1; i <= 11; i++) {
+      $('.end-time').append($('<option></option>').val(i + ':00').html(i + ':00'));
+      if (i % 2 === 0 || i % 1 === 0) {
+        $('.end-time').append($('<option></option>').val(i + ':30').html(i + ':30'));
+      }
+    }
+  });
+
   (function getRoles() {
     $.ajax({
       url: "/roles",
@@ -30,8 +47,8 @@ $(document).ready(function() {
 
     eventRole.start_date = $('#s-date').val();
     eventRole.end_date = $('#e-date').val();
-    eventRole.start_time = $('#s-time').val();
-    eventRole.end_time = $('#e-time').val();
+    eventRole.start_time = $('#s-time').val() + $('#ampmStart').val();
+    eventRole.end_time = $('#e-time').val() + $('#ampmEnd').val();
     eventRole.number_needed = $('#number_needed').val();
     eventRole.role_id = $('.select-roles').val();
 
