@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 var knex = require('../knex');
 const bcrypt = require('bcrypt');
 
@@ -47,6 +48,12 @@ router.post('/users', function(req, res, next) {
               }).returning('*')
               .then(function(user_data) {
                 insertedUser = user_data[0];
+                let token = {
+                  user_id: insertedUser.id,
+                  organization_id: null,
+                  email: insertedUser.email
+                };
+                  res.cookie('token',jwt.sign(token, process.env.JWT_SECRET), { httpOnly: true });
                 return knex('user_auth')
                   .transacting(t)
                   .insert({
@@ -68,6 +75,5 @@ router.post('/users', function(req, res, next) {
       });
     });
 });
-
 
 module.exports = router;
