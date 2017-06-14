@@ -14,8 +14,8 @@ $(document).ready(function() {
     contentType: "application/json"
   })
   .done(function(data) {
-    for (let i = 0; i < data.length; i++){
-      var eventData = data[i];
+    for (let i = 0; i < data.data.length; i++){
+      var eventData = data.data[i];
       var newEvent = {
         name: eventData.name,
         description: eventData.event_description,
@@ -32,11 +32,14 @@ $(document).ready(function() {
       };
       populateCard(newEvent);
     }
-    if(data.length > 0){
+    if(data.data.length > 0){
       $("#no_events").css("display", "none");
     }
     else{
       $("#no_events").css("display", "block");
+    }
+    if(origin === 'user'){
+      $('#welcome-user').text('Welcome,' + data.first_name + '!');
     }
   })
   .fail(function() {

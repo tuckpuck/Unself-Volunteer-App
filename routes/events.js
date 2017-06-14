@@ -40,7 +40,8 @@ router.get('/events/user', function(req, res, next){
       .join('user_event_roles', 'event_roles.id', 'user_event_roles.event_role_id')
       .where('user_id', decoded.user_id)
       .then(function(data){
-        return res.send(data);
+        console.log(decoded);
+        return res.send({name: decoded.first_name, data: data});
       });
     });
   }
