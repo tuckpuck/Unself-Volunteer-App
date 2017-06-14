@@ -19,4 +19,13 @@ router.post('/event_roles', function(req,res,next){
   });
 });
 
+router.get('/event_roles:id', function (req,res,next) {
+  var eventId = req.body.id;
+  knex.select('events.name','roles.name','roles.description','event_roles.number_needed').from('events').join('event_roles','events.id','event_roles.event_id').join('roles','event_roles.role_id','roles.id').where('event_roles.event_id',req.body.id)
+  .then(function(data) {
+    console.log(data);
+    res.send(data);
+  });
+});
+
 module.exports = router;
