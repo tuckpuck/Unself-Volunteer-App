@@ -23,9 +23,9 @@ $(document).ready(function() {
 
       .done(function(data) {
         if (data.user_id === null) {
-          window.location.href = "organization_home.html";
+          window.location.href = `organization_home.html?name=${data.org_name}`;
         } else {
-          window.location.href = "user_home.html";
+          window.location.href = `user_home.html?name=${data.first_name}`;
         }
       })
       .fail(function() {

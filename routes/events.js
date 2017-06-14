@@ -41,7 +41,7 @@ router.get('/events/user', function(req, res, next){
       .where('user_id', decoded.user_id)
       .then(function(data){
         console.log(decoded);
-        return res.send({name: decoded.first_name, data: data});
+        return res.send(data);
       });
     });
   }
