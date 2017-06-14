@@ -20,6 +20,7 @@ const roles = require('./routes/roles');
 
 const eventRoles = require('./routes/event_roles');
 const events = require('./routes/events');
+const userEventRoles = require('./routes/user_event_roles');
 
 const token = require('./routes/token');
 const jwt = require('jsonwebtoken');
@@ -48,6 +49,7 @@ app.use(function (req,res,next) {
 app.use(roles);
 app.use(eventRoles);
 app.use(events);
+app.use(userEventRoles);
 
 app.use((_req, res) => {
   res.sendStatus(404);

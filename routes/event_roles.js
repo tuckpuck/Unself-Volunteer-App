@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const cookieParser = require('cookie-parser');
 const knex = require('../knex');
-
+const jwt = require('jsonwebtoken');
 router.use(cookieParser());
 
 router.post('/event_roles', function(req,res,next){
@@ -39,7 +39,15 @@ router.get('/event_roles:id', function (req,res,next) {
   'event_roles.id',
   'event_roles.number_needed'])
   .then(function(data) {
-    res.send(data);
+    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
+      if (err) {
+        console.log(err);
+      }
+      else {
+        data[0].user_id = decoded.user_id;
+        res.send(data);
+      }
+    });
   });
 });
 
