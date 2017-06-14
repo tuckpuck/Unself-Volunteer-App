@@ -63,7 +63,7 @@ router.post('/token', function (req,res,next) {
 
 router.delete('/token', function (req,res,next) {
   res.setHeader('Content-Type', 'application/json');
-  res.cookie('token', '');
+  res.clearCookie('token');
   res.sendStatus(200);
 });
 
