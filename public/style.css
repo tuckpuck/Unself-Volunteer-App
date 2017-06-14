@@ -152,6 +152,26 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   text-decoration: underline;
 }
 
+/* Event Details */
+.eventdetailimg {
+  background-size: cover;
+  max-width: 100vw;
+  min-height: 350px;
+  bottom: -50px;
+}
+
+.crop {
+    overflow: hidden;
+}
+
+.crop img {
+    margin: 0px 0 -200px -15px;
+}
+
+.eventdetail {
+  font-size: 1.1em;
+}
+
 /* Logout */
 .logoutpgf {
   font-size: 1.25em;
