@@ -6,43 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Welcome!</title>
+  <title>Unself Event Planner</title>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- Roboto Font-->
-  <link href="https://fonts.googleapis.com/css?family=Roboto” rel=“stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body data-origin="user">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<body>
+  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
     <a class="navbar-brand" href="index.html">
-    <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
-    <form class="form-inline my-2 my-lg-2" action="logout.html">
-      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" type="submit">Logout</button>
-    </form>
+  <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
+
   </nav>
+
   <div class="container-fluid">
-    <h1 id="welcome" class="display-3 topmargin20 leftmargin20">Hello, Username!</h1>
     <div class="text-center">
-      <h4 class="topmargin60">Your Events:</h4>
-      <div class="col-md-6 offset-md-3">
-        <div id="append"></div>
-        <!-- Card appends here -->
-      </div>
-      <h3 id="no_events" class="display-4 allmargin20">No Events Yet <i class="fa fa-frown-o" aria-hidden="true"></i></h3>
-          <a href="browse_events.html"><button class="btn btn-primary topmargin10 bottommargin40">Browse Events</button></a>
+      <h1 class="display-3 topmargin40 text-center">You have successfully logged out!</h1>
+    </div>
+    <div>
+      <p class="logoutpgf topmargin60 text-center">&#10057 &nbsp<a href="index.html" class="logoutlinks"> Go back to Home</a></p>
+    </div>
+    <div>
+      <p class="logoutpgf text-center">&#10057 &nbsp <a href="https://www.unself.com/welcome" class="logoutlinks"> Check out the Unself App</a></p>
     </div>
   </div>
+  <!-- /container -->
+
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Tether JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/63f9bdc236.js"></script>
-  <script src="script/event_display.js"></script>
 </body>
 
 </html>
