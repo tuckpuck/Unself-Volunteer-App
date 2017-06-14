@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  let name = localStorage.getItem('name');
+  $('#welcome').text('Hello, ' + name + '!');
 
   var origin = $('body').data("origin");
   var url = "/events";
@@ -40,8 +42,6 @@ $(document).ready(function() {
       $("#no_events").css("display", "block");
     }
 
-    var welcome = decodeURIComponent(window.location.href.split('?')[1].split('=')[1]);
-    $('#welcome').text(`Hello, ${welcome}!`);
   })
   .fail(function() {
     $("#no_events").css("display", "block");
