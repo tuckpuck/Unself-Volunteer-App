@@ -38,6 +38,9 @@ $(document).ready(function() {
     else{
       $("#no_events").css("display", "block");
     }
+
+    var welcome = decodeURIComponent(window.location.href.split('?')[1].split('=')[1]);
+    $('#welcome').text(`Hello, ${welcome}!`);
   })
   .fail(function() {
     $("#no_events").css("display", "block");
@@ -52,7 +55,7 @@ $(document).ready(function() {
     $el.find(".eventlink").attr("href", eventObj.event_url);
 
 console.log(eventObj);
-  if (eventObj.photo_url == "") {
+  if (eventObj.photo_url === "") {
     $el.find(".eventimg").attr("src", "img/happyvolunteers.jpg");
     $el.find(".eventpic").attr("href", "img/happyvolunteers.jpg");
   } else {
@@ -76,12 +79,12 @@ if (eventObj.street_address !== undefined) {
   $el.find(".streetaddress").text("Location: " + eventObj.street_address);
 } else {
   $el.find(".streetaddress").text("");
-};
+}
 if (eventObj.city_id !== undefined) {
   $el.find(".eventcity").text(", " + eventObj.city_id);
 } else {
   $el.find(".eventcity").text("");
-};
+}
 $el.find(".eventwebsite").attr("href", eventObj.event_url);
     $('#append').append($el);
   }
