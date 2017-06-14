@@ -34,7 +34,8 @@ router.get('/events/user', function(req, res, next){
         'events.street_address',
         'events.zip_code',
         'events.photo_url',
-        'events.event_url')
+        'events.event_url',
+        'user_event_roles.user_id')
       .from('events')
       .join('event_roles', 'events.id', 'event_roles.event_id')
       .join('user_event_roles', 'event_roles.id', 'user_event_roles.event_role_id')
