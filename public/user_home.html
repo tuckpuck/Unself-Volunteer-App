@@ -24,7 +24,11 @@
     <h1 class="display-3 topmargin20 leftmargin20">Hello, Username!</h1>
     <div class="text-center">
       <h4 class="topmargin60">Your Events:</h4>
-      <h3 class="display-4 allmargin20">No Events Yet <i class="fa fa-frown-o" aria-hidden="true"></i></h3>
+      <div class="col-md-6 offset-md-3">
+        <div id="append"></div>
+        <!-- Card appends here -->
+      </div>
+      <h3 id="no_events" class="display-4 allmargin20">No Events Yet <i class="fa fa-frown-o" aria-hidden="true"></i></h3>
           <a href="browse_events.html"><button class="btn btn-primary topmargin10">Browse Events</button></a>
     </div>
   </div>
@@ -35,6 +39,7 @@
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/63f9bdc236.js"></script>
+  <script src="script/event_display.js"></script>
 </body>
 
 </html>
