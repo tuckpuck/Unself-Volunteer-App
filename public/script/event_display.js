@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   var origin = $('body').data("origin");
-  console.log(origin);
   var url = "/events";
 
   if(origin !== "all")
@@ -9,7 +8,6 @@ $(document).ready(function() {
     url = url + "/" + origin;
   }
 
-  console.log(url);
   var request = $.ajax({
     url: url,
     method: "GET",
