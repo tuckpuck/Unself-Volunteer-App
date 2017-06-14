@@ -15,7 +15,7 @@ $(document).ready(function() {
         <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
       </div>
       </div>`);
-      $('.row').append(card);
+      $('#event_detail_roles').append(card);
     }
     $('button').on('click', function(event){
       console.log(event.target);
