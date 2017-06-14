@@ -2,8 +2,22 @@
   box-sizing: border-box;
 }
 
-body, button, input, optgroup, select, textarea {
+body, p, button, input, optgroup, select, textarea {
   font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.display-3 {
+  font-size: 1.7em;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.display-4 {
+  font-size: 2.7em;
 }
 
 a {
@@ -100,16 +114,6 @@ input[type="submit"]:hover {
   margin: 30px 0px;
 }
 
-.display-3 {
-  font-size: 1.7em;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-.display-4 {
-  font-size: 2.7em;
-}
-
 /* new_user */
 .form-control {
   margin-bottom: 10px;
@@ -148,6 +152,16 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   text-decoration: underline;
 }
 
+/* Logout */
+.logoutpgf {
+  margin-left: 50px;
+  font-size: 1.25em;
+}
+
+.logoutlinks:hover {
+  text-decoration: underline;
+}
+
 /* Spacing */
 .margin10 {
   margin-bottom: 10px;
@@ -169,6 +183,10 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   margin-top: 40px;
 }
 
+.topmargin30 {
+  margin-top: 30px;
+}
+
 .topmargin20 {
   margin-top: 20px;
 }
@@ -179,6 +197,10 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 
 .leftmargin20 {
   margin-left: 20px;
+}
+
+.bottommargin40 {
+  margin-bottom: 40px;
 }
 
 .allmargin20 {
