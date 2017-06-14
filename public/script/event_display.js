@@ -19,6 +19,7 @@ $(document).ready(function() {
     for (let i = 0; i < data.length; i++){
       var eventData = data[i];
       var newEvent = {
+        id: eventData.id,
         name: eventData.name,
         description: eventData.event_description,
         //cause: eventData.cause,
@@ -47,19 +48,18 @@ $(document).ready(function() {
   });
 
   function populateCard(eventObj) {
-    let $el = $('<div class="card">' + '<div class="text-center">'  + '<a href = "" class="eventpic"><img class="eventimg card-img-top" src="" alt="Volunteer Event Picture"></a>' + '</div>' + '<div class="card-block">' + '<a href = "" class="eventlink">' + '<p class="eventname text-center"></p></a>' +
-    '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="streetaddress card-text inline-block"></p>' + '<p class="eventcity card-text inline-block"></p>' + '<a class="eventwebsite card-text block" href = "">Visit the Website</a>'+ '</div>' + '</div>');
+    let $el = $(`<div class="card" data-eventid="${eventObj.id}">` + '<div class="text-center">'  + '<a class="eventpic"><img class="eventimg card-img-top" src="" alt="Volunteer Event Picture"></a>' + '</div>' + '<div class="card-block">' + '<p class="eventname text-center"></p></a>' +
+    '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="streetaddress card-text inline-block"></p>' + '<p class="eventcity card-text inline-block"></p>' + '</div>' + '</div>');
 
 // This top one is the one to change to our event page
     $el.find(".eventlink").attr("href", eventObj.event_url);
 
-console.log(eventObj);
   if (eventObj.photo_url == "") {
     $el.find(".eventimg").attr("src", "img/happyvolunteers.jpg");
-    $el.find(".eventpic").attr("href", "img/happyvolunteers.jpg");
+    // $el.find(".eventpic").attr("href", "img/happyvolunteers.jpg");
   } else {
     $el.find(".eventimg").attr("src", eventObj.photo_url);
-    $el.find(".eventpic").attr("href", eventObj.photo_url);
+    // $el.find(".eventpic").attr("href", eventObj.photo_url);
   }
 
     $el.find(".eventname").text(eventObj.name);
@@ -87,4 +87,10 @@ if (eventObj.city_id !== undefined) {
 $el.find(".eventwebsite").attr("href", eventObj.event_url);
     $('#append').append($el);
   }
+
+  $('body').on('click', function(event){
+    var eventId = $(event.target).closest('.card').data('eventid');
+      window.location.href = `event_details.html?${eventId}`;
+  });
+
 });
