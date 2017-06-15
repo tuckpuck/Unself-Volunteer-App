@@ -15,9 +15,8 @@
   background-position: center;
   background-size: cover;
 }
-p{
+p {
   color: #000000;
-  /*font-size: 32px;*/
 }
 .something {
   padding: 10px;
@@ -45,8 +44,8 @@ p{
 @media (max-width:730px) {
   .opaque {
     font-size: 15px;
-    padding: 15px 15px 0px 15px;
-    margin-top: -65px;
+    padding: 15px 15px 25px 15px;
+    margin-top: -45px;
   }
   .display-4 {
     font-size: 1.4em;
@@ -54,11 +53,14 @@ p{
   #register{
     display:none;
   }
+  #signin {
+    margin-right: 10px;
+  }
 }
 @media (max-height: 670px) {
   .opaque {
     padding: 10px 15px 0px 15px;
     margin-top: -115px;
-      background-color: rgba(252, 252, 252, 1);
+    background-color: rgba(252, 252, 252, .9);
   }
 }
