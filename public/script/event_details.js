@@ -6,6 +6,7 @@ $(document).ready(function() {
     contentType: "application/json"
   })
   .done(function(data){
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
       console.log(data[i]);
       $('#event_detail_img').attr('src', data[i].photo_url);

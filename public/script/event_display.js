@@ -91,7 +91,7 @@ $el.find(".eventwebsite").attr("href", eventObj.event_url);
 
   $('body').on('click', function(event){
     var eventId = $(event.target).closest('.card').data('eventid');
-      window.location.href = `event_details.html?${eventId}`;
+    window.location.href = `event_details.html?${eventId}`;
   });
 
 });

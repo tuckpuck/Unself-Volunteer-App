@@ -62,6 +62,7 @@ router.get('/event_roles:id', function (req,res,next) {
       }
       else {
         // data[0].user_id = decoded.user_id;
+        console.log(data);
         res.send(data);
       }
     });
