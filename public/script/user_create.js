@@ -10,8 +10,8 @@ $( document ).ready(function() {
     this.password = password;
   }
 
-  $('.volunteer').on('submit', function(event){
-    
+  $('.newvolunteer').on('submit', function(event){
+
     event.preventDefault();
 
     var newUser = new User();

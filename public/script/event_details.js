@@ -38,6 +38,11 @@ $(document).ready(function() {
         </div>
         </div>`);
         $('#event_detail_roles').append(card);
+        if (localStorage.getItem('origin') === 'org') {
+          $('.volunteer').hide();
+        } else {
+          $('.volunteer').show();
+        }
       }
     }
     $('button').on('click', function(event){
@@ -66,4 +71,5 @@ $(document).ready(function() {
   .fail(function(){
     console.log('no data');
   });
+
 });
