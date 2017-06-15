@@ -154,9 +154,10 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 
 /* Event Details */
 .eventdetailimg {
+  display: flex;
   background-size: cover;
-  max-width: 100vw;
-  min-height: 350px;
+  width: 100vw;
+  min-height: 500px;
   bottom: -50px;
 }
 
@@ -165,7 +166,7 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 }
 
 .crop img {
-    margin: 0px 0 -200px -15px;
+    margin: 0px 0 -350px -15px;
 }
 
 .eventdetail {
