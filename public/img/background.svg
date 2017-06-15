@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="800" height="832" viewBox="0 0 800 832" id="svg2">
+	<title>Kirikane Pattern 12</title>
+	<g id="Everything" style="fill:none;stroke:black;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+		<path d="M 0,0 80,46.188022 80,138.56407 0,92.376043" id="E1" />
+		<path d="M 800,0 720,46.188022 720,138.56407 800,92.376043" id="E2" />
+		<path d="M 0,184.75209 80,138.56407 80,230.94011 0,277.12813" id="E3" />
+		<path d="M 800,184.75209 720,138.56407 720,230.94011 800,277.12813" id="E4" />
+		<g id="V1">
+			<path d="M 160,0 240,46.188022 240,138.56407 160,92.376043 160,0 z" />
+			<path d="M 160,0 160,92.376043 80,138.56406 80,46.188022 160,0 z" />
+		</g>
+		<g id="V2">
+			<path d="M 80,138.56406 160,184.75209 160,277.12813 80,230.94011 z" />
+			<path d="M 240,138.56406 160,184.75209 160,277.12813 240,230.94011 z" />
+		</g>
+		<path d="M 0,0 480,831.38438" />
+		<path d="M 320,831.38438 0,277.12813 160,0 640,831.38438" />
+		<path d="M 160,831.38438 0,554.25626 320,0 800,831.38438" />
+		<path d="M 0,831.38438 480,0 800,554.25626 640,831.38438" />
+		<path d="M 160,831.38438 640,0 800,277.12813" />
+		<path d="M 800,0 320,831.38438" />
+		<path d="M 800,277.12813 480,831.38438" />
+		<path d="M 0,138.56406 H 800 M 0,277.12813 H 800 M 0,415.69219 H 800 M 0,554.25626 H 800 M 0,692.82032 H 800" />
+		<use xlink:href="#V1" transform="translate(160,0)" />
+		<use xlink:href="#V1" transform="translate(320,0)" />
+		<use xlink:href="#V1" transform="translate(480,0)" />
+		<use xlink:href="#V1" transform="translate(0,277.12813)" />
+		<use xlink:href="#V1" transform="translate(160,277.12813)" />
+		<use xlink:href="#V1" transform="translate(320,277.12813)" />
+		<use xlink:href="#V1" transform="translate(480,277.12813)" />
+		<use xlink:href="#V1" transform="translate(0,554.25626)" />
+		<use xlink:href="#V1" transform="translate(160,554.25626)" />
+		<use xlink:href="#V1" transform="translate(320,554.25626)" />
+		<use xlink:href="#V1" transform="translate(480,554.25626)" />
+		<use xlink:href="#V2" transform="translate(160,0)" />
+		<use xlink:href="#V2" transform="translate(320,0)" />
+		<use xlink:href="#V2" transform="translate(480,0)" />
+		<use xlink:href="#V2" transform="translate(160,277.12813)" />
+		<use xlink:href="#V2" transform="translate(320,277.12813)" />
+		<use xlink:href="#V2" transform="translate(480,277.12813)" />
+		<use xlink:href="#V2" transform="translate(0,554.25626)" />
+		<use xlink:href="#V2" transform="translate(160,554.25626)" />
+		<use xlink:href="#V2" transform="translate(320,554.25626)" />
+		<use xlink:href="#V2" transform="translate(480,554.25626)" />
+		<use xlink:href="#V2" transform="translate(0,277.12813)" />
+		<use xlink:href="#E1" transform="translate(0,277.12813)" />
+		<use xlink:href="#E1" transform="translate(0,554.25626)" />
+		<use xlink:href="#E2" transform="translate(0,277.12813)" />
+		<use xlink:href="#E2" transform="translate(0,554.25626)" />
+		<use xlink:href="#E3" transform="translate(0,277.12813)" />
+		<use xlink:href="#E3" transform="translate(0,554.25626)" />
+		<use xlink:href="#E4" transform="translate(0,277.12813)" />
+		<use xlink:href="#E4" transform="translate(0,554.25626)" />
+	</g>
+</svg>
