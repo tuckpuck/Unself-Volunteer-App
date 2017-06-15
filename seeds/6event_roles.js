@@ -3,7 +3,8 @@ exports.seed = function(knex, Promise) {
   return knex('event_roles').del()
     .then(function() {
       // Inserts seed entries
-      return knex('event_roles').insert([{
+      return knex('event_roles').insert([
+        {
           id: 1,
           start_date: '07-22-2017',
           end_date: '07-23-2017',
@@ -93,6 +94,9 @@ exports.seed = function(knex, Promise) {
           role_id: 4,
           event_id: 4
         }
-      ]);
+      ])
+      .then(() => {
+        return knex.raw("SELECT setval('event_roles_id_seq', (SELECT MAX(id) FROM event_roles))");
     });
+  });
 };
