@@ -32,7 +32,7 @@ $(document).ready(function() {
         <div class="card-block ">
           <h5>${data[i].name}</h5>
           <p>${data[i].description}</p>
-          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
+          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${userId}>Volunteer</button>
         </div>
         </div>`);
           $('#event_detail_roles').append(card);
@@ -43,33 +43,29 @@ $(document).ready(function() {
           }
         }
       }
-    }
+      $('.volunteer').on('click', function(event){
+        var eventRoleId = $(event.target).data('eventroleid');
+        var userId = $('.volunteer').data('userid');
+        var newUserEventRole = {
+          user_id: userId,
+          event_role_id: eventRoleId,
+        };
 
-    $('.volunteer').on('click', function(event){
-      var eventRoleId = $(event.target).data('eventroleid');
-      var userId = $('.volunteer').data('userid');
-      var newUserEventRole = {
-        user_id: userId,
-        event_role_id: eventRoleId,
-      };
-
-      newUserEventRole = JSON.stringify(newUserEventRole);
-      $.ajax({
+        newUserEventRole = JSON.stringify(newUserEventRole);
+        $.ajax({
           url: `/user_event_roles`,
           method: "POST",
           data: newUserEventRole,
           contentType: "application/json"
-      })
-      .done(function(data) {
-        console.log(data);
-      })
-      .fail(function() {
-        console.log('no data');
+        })
+        .done(function(data) {
+          console.log(data);
+        })
+        .fail(function() {
+          console.log('no data');
+        });
       });
     });
-  });
-
-
 
   $('.event-details').on('click', function(event) {
     if (localStorage.getItem('origin') === 'org') {
