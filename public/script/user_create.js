@@ -10,8 +10,8 @@ $( document ).ready(function() {
     this.password = password;
   }
 
-
   $('.volunteer').on('submit', function(event){
+    
     event.preventDefault();
 
     var newUser = new User();
@@ -32,7 +32,10 @@ $( document ).ready(function() {
       data: newUser,
       contentType: "application/json"
     })
-    .done(function() {
+    .done(function(data) {
+      localStorage.setItem('name',data.first_name);
+      localStorage.setItem('id',data.user_id);
+      localStorage.setItem('origin','user');
       window.location.href = "user_home.html";
     })
     .fail(function(jqXHR, textStatus,errorThrown) {

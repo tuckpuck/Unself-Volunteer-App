@@ -1,8 +1,11 @@
 $(document).ready(function() {
+
   let name = localStorage.getItem('name');
   $('#welcome').text('Hello, ' + name + '!');
 
-  var origin = $('body').data("origin");
+  // var origin = $('body').data("origin");
+
+  var origin = localStorage.getItem('origin');
   var url = "/events";
 
   if(origin !== "all")
@@ -49,7 +52,7 @@ $(document).ready(function() {
   });
 
   function populateCard(eventObj) {
-    let $el = $(`<div class="card" data-eventid="${eventObj.id}">` + '<div class="text-center">'  + '<a class="eventpic"><img class="eventimg card-img-top" src="" alt="Volunteer Event Picture"></a>' + '</div>' + '<div class="card-block">' + '<p class="eventname text-center"></p></a>' +
+    let $el = $(`<div class="card events-dynamic" data-eventid="${eventObj.id}">` + '<div class="text-center">'  + '<a class="eventpic"><img class="eventimg card-img-top" src="" alt="Volunteer Event Picture"></a>' + '</div>' + '<div class="card-block">' + '<p class="eventname text-center"></p></a>' +
     '<p class="eventdescription text-center"></p>' + '<p class="eventdate card-text"></p>' + '<p class="eventtime card-text"></p>' + '<p class="streetaddress card-text inline-block"></p>' + '<p class="eventcity card-text inline-block"></p>' + '</div>' + '</div>');
 
 // This top one is the one to change to our event page
@@ -89,7 +92,7 @@ $el.find(".eventwebsite").attr("href", eventObj.event_url);
     $('#append').append($el);
   }
 
-  $('body').on('click', function(event){
+  $('.events-dynamic').on('click', function(event){
     var eventId = $(event.target).closest('.card').data('eventid');
       window.location.href = `event_details.html?${eventId}`;
   });
