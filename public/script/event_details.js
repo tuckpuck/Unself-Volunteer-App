@@ -2,6 +2,7 @@ $(document).ready(function() {
   var eventId = window.location.href.split('?')[1];
   var userId = localStorage.getItem('id');
   var request = $.ajax({
+<<<<<<< HEAD
     url: `/event_roles${eventId}`,
     method: "GET",
     contentType: "application/json"
@@ -41,6 +42,47 @@ $(document).ready(function() {
           $('.volunteer').hide();
         } else {
           $('.volunteer').show();
+=======
+      url: `/event_roles${eventId}`,
+      method: "GET",
+      contentType: "application/json"
+    })
+    .done(function(data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+          $('#event_detail_img').attr('style', `background-image: url(${data[i].photo_url})`);
+        $('#event_detail_name').text(data[i].event_name);
+        $('#event_detail_org').text(data[i].organization_name);
+        if (data[i].start_date === data[i].end_date) {
+          $('#event_detail_date').text(data[i].start_date);
+        } else {
+          $('#event_detail_date').text(` ${data[i].start_date} to ${data[i].end_date}`);
+        }
+        if (data[i].start_time === data[i].end_time) {
+          $('#event_detail_time').text(data[i].start_time);
+        } else {
+          $('#event_detail_time').text(` ${data[i].start_time} to ${data[i].end_time}`);
+        }
+        $('#event_detail_description').text(data[i].event_description);
+        if (data[i].event_url.includes('www.')) {
+          $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website').attr('target', '_blank');
+        }
+        if (data[i].event_role_id !== null) {
+          var card = $(`<div class="card col-md-5 col-sm-12">
+        <div class="card-block ">
+          <h5>${data[i].name}</h5>
+          <p>${data[i].description}</p>
+          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
+        </div>
+        </div>`);
+          $('#event_detail_roles').append(card);
+          if (localStorage.getItem('origin') === 'org') {
+            $('.volunteer').hide();
+          } else {
+            $('.volunteer').show();
+          }
+>>>>>>> 856f1567d41226855bd024394ea3d8b103f91dd1
         }
       }
     }
