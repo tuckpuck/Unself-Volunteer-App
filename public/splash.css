@@ -26,6 +26,7 @@ p {
   text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   color: #FFFFFF;
+  background-color: #4C70A0;
 }
 
 .display-4 {
@@ -39,6 +40,7 @@ p {
   opacity: .7;
   text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+  background-color: #135E1F;
 }
 
 @media (max-width:730px) {
