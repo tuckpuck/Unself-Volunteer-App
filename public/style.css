@@ -8,6 +8,19 @@ body, p, button, input, optgroup, select, textarea {
 h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
+.navbar {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.navbar.scrolled {
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+}
 
 .display-3 {
   font-size: 1.7em;
