@@ -100,7 +100,7 @@ function getData(getAllEvents){
       $('#append').append($el);
   }
 
-  $('.events-dynamic').on('click', function(event){
+  $('#append').on('click', function(event){
     var eventId = $(event.target).closest('.card').data('eventid');
     window.location.href = `event_details.html?${eventId}`;
   });
