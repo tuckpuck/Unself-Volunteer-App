@@ -6,8 +6,28 @@ $(document).ready(function() {
     contentType: "application/json"
   })
   .done(function(data){
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
       console.log(data[i]);
+      $('#event_detail_img').attr('src', data[i].photo_url);
+      $('#event_detail_name').text(data[i].event_name);
+      $('#event_detail_org').text(data[i].organization_name);
+      if (data[i].start_date === data[i].end_date) {
+        $('#event_detail_date').text(`Date: ${data[i].start_date}`);
+      }
+      else {
+        $('#event_detail_date').text(`Date: ${data[i].start_date} to ${data[i].end_date}`);
+      }
+      if (data[i].start_time === data[i].end_time) {
+        $('#event_detail_time').text(`Time: ${data[i].start_time}`);
+      }
+      else {
+        $('#event_detail_time').text(`Time: ${data[i].start_time} to ${data[i].end_time}`);
+      }
+      $('#event_detail_description').text(data[i].event_description);
+      if (data[i].event_url.includes('www.')){
+        $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website');
+      }
       var card = $(`<div class="card col-6">
       <div class="card-block">
         <h5>${data[i].name}</h5>
