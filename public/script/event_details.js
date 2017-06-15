@@ -28,14 +28,16 @@ $(document).ready(function() {
       if (data[i].event_url.includes('www.')){
         $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website').attr('target','_blank');
       }
-      var card = $(`<div class="card col-6">
-      <div class="card-block">
-        <h5>${data[i].name}</h5>
-        <p>${data[i].description}</p>
-        <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
-      </div>
-      </div>`);
-      $('#event_detail_roles').append(card);
+      if(data[i].event_role_id !== null){
+        var card = $(`<div class="card col-6">
+        <div class="card-block">
+          <h5>${data[i].name}</h5>
+          <p>${data[i].description}</p>
+          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
+        </div>
+        </div>`);
+        $('#event_detail_roles').append(card);
+      }
     }
     $('button').on('click', function(event){
       console.log(event.target);
