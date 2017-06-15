@@ -41,7 +41,7 @@ router.get('/event_roles:id', function (req,res,next) {
   .leftJoin('event_roles','events.id','event_roles.event_id')
   .leftJoin('roles','event_roles.role_id','roles.id')
   .leftJoin('user_event_roles', 'event_roles.id', 'user_event_roles.event_role_id')
-  .where('event_roles.event_id',eventId)
+  .where('events.id', eventId)
   .groupByRaw(['events.name',
   'events.start_date',
   'events.end_date',
