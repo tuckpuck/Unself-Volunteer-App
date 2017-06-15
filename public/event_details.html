@@ -21,7 +21,7 @@
 <body>
   <div class="background">
 
-    <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
+    <nav class="navbar navbar-toggleable-xl navbar-light fixed-top bg-faded">
       <a class="navbar-brand event-details">
         <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
         <form class="form-inline my-2 my-lg-2" action="logout.html">
@@ -66,6 +66,9 @@
 
         </div>
         <!-- This is where Roles are being appended -->
+        <div class="text-center">
+          <button id="done" class="btn homebtn btn-primary topmargin10">Done!</button>
+        </div>
       </div>
       <!-- /container -->
 
@@ -76,10 +79,9 @@
       <!-- Bootstrap JS -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-
-  <script src="script/event_details.js" charset="utf-8"></script>
-  <script src="script/shared_js.js" charset="utf-8"></script>
-
+      <script src="script/event_details.js" charset="utf-8"></script>
+      <script src="script/shared_js.js" charset="utf-8"></script>
+      <script src="script/event_buttonremove.js" charset="utf-8"></script>
   </div>
 </body>
 

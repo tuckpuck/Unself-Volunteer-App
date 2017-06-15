@@ -40,8 +40,20 @@ router.get('/events/user', function(req, res, next){
       .join('event_roles', 'events.id', 'event_roles.event_id')
       .join('user_event_roles', 'event_roles.id', 'user_event_roles.event_role_id')
       .where('user_id', decoded.user_id)
+      .groupByRaw(['events.id',
+      'events.name',
+      'events.description',
+      'events.start_date',
+      'events.end_date',
+      'events.start_time',
+      'events.end_time',
+      'events.street_address',
+      'events.zip_code',
+      'events.photo_url',
+      'events.event_url',
+      'user_event_roles.user_id'])
       .then(function(data){
-        console.log(decoded);
+        return res.send(data);
       });
     });
   }
