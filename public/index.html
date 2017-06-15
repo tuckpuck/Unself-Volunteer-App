@@ -14,48 +14,42 @@
   <!-- Roboto Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- Local CSS -->
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+  <link rel="stylesheet" href="splash.css" type="text/css">
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
-    <a class="navbar-brand" href="index.html">
-<img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
 
-      <form class="form-inline my-2 my-lg-2" action="signin.html">
-        <button class="btn btn-outline-success my-2 my-sm-2  navbar-toggler-right" type="submit">Login</button>
-      </form>
-  </nav>
+  <div id="background">
+    <form class="form-inline my-2 my-lg-2 justify-content-right " action="signin.html">
+      <button type="button" class="fixed-top pull-right btn btn-lg btn-outline-success my-2 my-sm-2" id="signin">Login</button>
+    </form>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 text-center">
-        <div class="display-4 topmargin150">Welcome to Unself!</div>
-        <h4 class="topmargin40">Unself enables volunteers and organizations to connect and track their combined impact.</h4>
-        <div class="btn-group-lg topmargin60" role="group" aria-label="Basic example">
-          <p>Register as:</p>
-          <a href="new_user.html">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center splash-main">
+          <h2 class="topmargin40">Where volunteers and organizations can connect and together track their combined impact.</h2>
+          <div class="btn-group-lg topmargin60" role="group" aria-label="Basic example">
+            <p>Register as:</p>
+            <a href="new_user.html">
             <button type="button" class="btn btn-lg btn-info homebtn">Volunteer</button>
           </a>
-          <a href="new_organization.html">
+            <a href="new_organization.html">
             <button type="button" class="btn btn-lg btn-info homebtn">Organization</button>
           </a>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- jQuery JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Tether JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="script/shared_js.js"></script>
   </div>
-
-
-  <!-- jQuery JS-->
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <!-- Tether JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="script/shared_js.js"></script>
-
 </body>
+
 </html>

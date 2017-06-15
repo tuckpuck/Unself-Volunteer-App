@@ -57,12 +57,6 @@ input[type="submit"]:hover {
   display: block;
 }
 
-/* Index Page */
-.homebtn {
-  margin: 3px;
-  border: 1px solid #292B2C;
-}
-
 /* Sign In Page */
 .form-signin {
   max-width: 330px;

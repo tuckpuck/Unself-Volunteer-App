@@ -1,0 +1,41 @@
+.splash-main {
+  padding-top: 70vh;
+}
+#background {
+  display: flex;
+  height:100vh;
+  background-image: url('img/landing-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+h2{
+  color: #000000;
+  font-size: 32px;
+}
+.homebtn {
+  margin: 10px;
+  opacity: .8;
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+  background-color: #32FCFC;
+  color: #FFFFFF;
+}
+
+#signin {
+  left: auto;
+  margin-right: 1%;
+  font-weight: bold;
+  opacity: .7;
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+}
+#signin :hover {
+  opacity: 1;
+}
+
+@media (max-width:730px) {
+  h2 {
+    font-size: 23px;
+  }
+}
