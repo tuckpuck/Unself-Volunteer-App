@@ -3,6 +3,9 @@
 }
 .opaque {
   background-color: rgba(252, 252, 252, 0.5);
+  border-radius: 10px;
+  padding: 35px 35px 20px 35px;
+  margin-top: -35px;
 }
 #background {
   display: flex;
@@ -14,17 +17,20 @@
 }
 p{
   color: #000000;
-  font-size: 32px;
+  /*font-size: 32px;*/
 }
 .something {
   padding: 10px;
 }
 .homebtn {
-  margin: 10px;
+  margin: 3px;
   text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
   color: #FFFFFF;
+}
 
+.display-4 {
+  font-size: 2em;
 }
 
 #signin {
@@ -37,7 +43,22 @@ p{
 }
 
 @media (max-width:730px) {
-  p {
+  .opaque {
     font-size: 15px;
+    padding: 15px 15px 0px 15px;
+    margin-top: -65px;
+  }
+  .display-4 {
+    font-size: 1.4em;
+  }
+  #register{
+    display:none;
+  }
+}
+@media (max-height: 670px) {
+  .opaque {
+    padding: 10px 15px 0px 15px;
+    margin-top: -115px;
+      background-color: rgba(252, 252, 252, 1);
   }
 }
