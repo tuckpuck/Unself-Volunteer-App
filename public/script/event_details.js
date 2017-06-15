@@ -26,7 +26,7 @@ $(document).ready(function() {
       }
       $('#event_detail_description').text(data[i].event_description);
       if (data[i].event_url.includes('www.')){
-        $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website');
+        $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website').attr('target','_blank');
       }
       var card = $(`<div class="card col-6">
       <div class="card-block">
