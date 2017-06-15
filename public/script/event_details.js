@@ -45,8 +45,7 @@ $(document).ready(function() {
         }
       }
     }
-    $('button').on('click', function(event){
-      console.log(event.target);
+    $('.volunteer').on('click', function(event){
       var eventRoleId = $(event.target).data('eventroleid');
       var userId = $('.volunteer').data('userid');
       console.log(eventRoleId);
