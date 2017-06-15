@@ -17,18 +17,36 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
     <a class="navbar-brand" href="index.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
+    <form class="form-inline my-2 my-lg-2" action="logout.html">
+      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" id ="logout" type="button">Logout</button>
+    </form>
   </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid crop">
+      <img src="https://airbusdefenceandspace.com/wp-content/uploads/2016/09/earth-view-from-satellite-space-systems-cover.jpg" alt="" class="eventdetailimg" id="event_detail_img">
+    </div><!-- /Container-fluid -->
       <div class="container">
-        <div class="row">
+          <div class="text-center">
+            <h1 class="display-4 topmargin40 text-center eventdetailname" id="event_detail_name">Event Name</h1>
+          </div>
+          <br>
+          <p class="eventdetail eventdetailorg" id="event_detail_org">Organization: NASA</p>
+          <p class="eventdetail eventdetaildate" id="event_detail_date">Date: 09-18-21</p>
+          <p class="eventdetail eventdetailtime" id="event_detail_time">Time: 5:00 PM</p>
+          <hr>
+          <p class="text-center">
 
-        </div>
+          </p>
+          <p class="eventdetail eventdetaildescription" id="event_detail_description">About: Mission to Mars. Today we become multi-planetary!</p>
+          <hr>
+          <p class="eventdetail">Roles: </p>
 
-      </div>
+       <div class="row" id="event_detail_roles">
+
+       </div><!-- This is where Roles are being appended -->
     </div> <!-- /container -->
 
     <!-- jQuery JS-->
