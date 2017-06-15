@@ -66,6 +66,10 @@ $(document).ready(function() {
         var currentRole = $('<li class="list-group-item"></li>').html(` ${$('.select-roles option:selected').html()} (Volunteers Needed: ${$('#number_needed').val()})`);
 
         $('#roleTable').append(currentRole);
+        $('.modal').modal('hide');
+        $('form').find("input[type=text], textarea").val("");
+        $('form').find("input[type=number], textarea").val("");
+        $('form').find("select").val(0);
       })
       .fail(function() {
         console.log("Please Check That All Fields Are Completed");
