@@ -116,5 +116,12 @@ function getData(getAllEvents){
     else
       window.location.href = 'organization_home.html';
   });
+  $('.browse-events').on('click', function(){
+    var origin = localStorage.getItem('origin');
+    if(origin === 'user')
+      window.location.href = 'user_home.html';
+    else
+      window.location.href = 'organization_home.html';
+  });
 
 });
