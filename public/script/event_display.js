@@ -1,15 +1,17 @@
 $(document).ready(function() {
 
+
   let name = localStorage.getItem('name');
   $('#welcome').text('Hello, ' + name + '!');
-
-  $('.browse-all-events').on('click', function(event){
-      getData(true);
-  });
-
-  getData(false);
-
-
+  console.log('url', window.location.href);
+  if(window.location.href.includes('browse_events.html')){
+    localStorage.setItem('all_events', 'true');
+    getData(true);
+  }
+  else {
+    localStorage.setItem('all_events', 'false');
+    getData(false);
+  }
 
 function getData(getAllEvents){
     var origin = localStorage.getItem('origin');
@@ -18,6 +20,7 @@ function getData(getAllEvents){
     if(getAllEvents !== true)
     {
       url = url + "/" + origin;
+      console.log(url);
     }
 
     var request = $.ajax({
@@ -26,6 +29,7 @@ function getData(getAllEvents){
       contentType: "application/json"
     })
     .done(function(data) {
+      $('#append').empty();
       for (let i = 0; i < data.length; i++){
         var eventData = data[i];
         var newEvent = {
@@ -103,6 +107,14 @@ function getData(getAllEvents){
   $('#append').on('click', function(event){
     var eventId = $(event.target).closest('.card').data('eventid');
     window.location.href = `event_details.html?${eventId}`;
+  });
+
+  $('#my_events').on('click', function(){
+    var origin = localStorage.getItem('origin');
+    if(origin === 'user')
+      window.location.href = 'user_home.html';
+    else
+      window.location.href = 'organization_home.html';
   });
 
 });

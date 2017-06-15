@@ -34,8 +34,9 @@ $( document ).ready(function() {
     })
     .done(function(data) {
       localStorage.setItem('name',data.first_name);
-      localStorage.setItem('id',data.user_id);
+      localStorage.setItem('id',data.id);
       localStorage.setItem('origin','user');
+      console.log(localStorage);
       window.location.href = "user_home.html";
     })
     .fail(function(jqXHR, textStatus,errorThrown) {

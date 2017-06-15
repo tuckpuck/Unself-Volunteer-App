@@ -56,16 +56,7 @@ router.get('/event_roles:id', function (req,res,next) {
   'event_roles.id',
   'event_roles.number_needed'])
   .then(function(data) {
-    jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded){
-      if (err) {
-        console.log(err);
-      }
-      else {
-        // data[0].user_id = decoded.user_id;
-        console.log(data);
-        res.send(data);
-      }
-    });
+    res.send(data);
   });
 });
 
