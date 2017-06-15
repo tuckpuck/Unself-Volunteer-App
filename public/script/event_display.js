@@ -1,8 +1,11 @@
 $(document).ready(function() {
+
   let name = localStorage.getItem('name');
   $('#welcome').text('Hello, ' + name + '!');
 
-  var origin = $('body').data("origin");
+  // var origin = $('body').data("origin");
+
+  var origin = localStorage.getItem('origin');
   var url = "/events";
 
   if(origin !== "all")
@@ -91,6 +94,7 @@ $el.find(".eventwebsite").attr("href", eventObj.event_url);
 
   $('body').on('click', function(event){
     var eventId = $(event.target).closest('.card').data('eventid');
+    console.log(eventId);
       window.location.href = `event_details.html?${eventId}`;
   });
 

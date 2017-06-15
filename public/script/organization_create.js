@@ -32,7 +32,12 @@ $( document ).ready(function() {
       data: newOrg,
       contentType: "application/json"
     })
-    .done(function() {
+    .done(function(data) {
+
+      localStorage.setItem('name',data.name);
+      localStorage.setItem('id',data.organization_id);
+      localStorage.setItem('origin','org');
+      
       window.location.href = "organization_home.html";
     })
     .fail(function() {

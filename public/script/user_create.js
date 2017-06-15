@@ -33,6 +33,9 @@ $( document ).ready(function() {
       contentType: "application/json"
     })
     .done(function() {
+      localStorage.setItem('name',data.first_name);
+      localStorage.setItem('id',data.user_id);
+      localStorage.setItem('origin','user');
       window.location.href = "user_home.html";
     })
     .fail(function(jqXHR, textStatus,errorThrown) {
