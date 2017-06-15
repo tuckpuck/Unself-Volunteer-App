@@ -72,4 +72,19 @@ $(document).ready(function() {
     console.log('no data');
   });
 
+  $('#done').on('click', function(){
+    var origin = localStorage.getItem('origin');
+    var allEvents = localStorage.getItem('all_events');
+
+    if(allEvents === 'true'){
+      window.location.href = 'browse_events.html';
+    }
+    else{
+      if(origin === 'user')
+        window.location.href = 'user_home.html';
+      else
+        window.location.href = 'organization_home.html';
+    }
+  });
+
 });
