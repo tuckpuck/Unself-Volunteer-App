@@ -39,8 +39,7 @@ $(document).ready(function() {
         $('#event_detail_roles').append(card);
       }
     }
-    $('button').on('click', function(event){
-      console.log(event.target);
+    $('.browse-all-events').on('click', function(event){
       var eventRoleId = $(event.target).data('eventroleid');
       var userId = $('.volunteer').data('userid');
       console.log(eventRoleId);
@@ -64,5 +63,13 @@ $(document).ready(function() {
   })
   .fail(function(){
     console.log('no data');
+  });
+  $('.event-details').on('click', function(event) {
+    if (localStorage.getItem('origin') === 'org') {
+      window.location.href = 'organization_home.html';
+    }
+    else {
+      window.location.href = 'user_home.html';
+    }
   });
 });
