@@ -22,11 +22,12 @@ router.post('/event_roles', function(req,res,next){
 router.get('/event_roles:id', function (req,res,next) {
   var eventId = req.params.id;
   knex.select(
-    'events.name',
+    'events.name as event_name',
     'events.start_date',
     'events.end_date',
     'events.start_time',
-    'events.description',
+    'events.description as event_description',
+    'events.event_url',
     'events.photo_url',
     'events.end_time',
     'organizations.name as organization_name',
@@ -46,6 +47,7 @@ router.get('/event_roles:id', function (req,res,next) {
   'events.end_date',
   'events.start_time',
   'events.description',
+  'events.event_url',
   'events.photo_url',
   'events.end_time',
   'organizations.name',
