@@ -61,6 +61,11 @@ input[type="submit"]:hover {
   height: 35px;
 }
 
+.navbar-brand {
+  cursor: pointer;
+  font-family: sans-serif, 'Roboto';
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -185,6 +190,18 @@ box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
 
 .logoutlinks:hover {
   text-decoration: underline;
+}
+/* Updated Bootstrap Colors */
+.btn-info {
+  background-color: #4C70A0;
+}
+
+.btn-success {
+  background-color: #135E1F;
+}
+
+.btn-primary {
+  background-color: #0058a3;
 }
 
 /* Spacing */
