@@ -6,7 +6,6 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.post('/user_event_roles', function(req,res,next){
-  console.log("in user event roles");
   var newUserEventRole = req.body;
   knex('user_event_roles')
   .insert(newUserEventRole, '*' )

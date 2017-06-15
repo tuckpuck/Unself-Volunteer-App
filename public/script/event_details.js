@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var eventId = window.location.href.split('?')[1];
+  var userId = localStorage.getItem('id');
   var request = $.ajax({
       url: `/event_roles${eventId}`,
       method: "GET",
@@ -31,7 +32,7 @@ $(document).ready(function() {
         <div class="card-block ">
           <h5>${data[i].name}</h5>
           <p>${data[i].description}</p>
-          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${data[0].user_id}>Volunteer</button>
+          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${userId}>Volunteer</button>
         </div>
         </div>`);
           $('#event_detail_roles').append(card);
@@ -42,11 +43,9 @@ $(document).ready(function() {
           }
         }
       }
-      $('.browse-all-events').on('click', function(event) {
+      $('.volunteer').on('click', function(event){
         var eventRoleId = $(event.target).data('eventroleid');
         var userId = $('.volunteer').data('userid');
-        console.log(eventRoleId);
-        console.log(userId);
         var newUserEventRole = {
           user_id: userId,
           event_role_id: eventRoleId,
@@ -54,24 +53,40 @@ $(document).ready(function() {
 
         newUserEventRole = JSON.stringify(newUserEventRole);
         $.ajax({
-            url: `/user_event_roles`,
-            method: "POST",
-            data: newUserEventRole,
-            contentType: "application/json"
-          })
-          .done(function(data) {
-            console.log(data);
-          });
+          url: `/user_event_roles`,
+          method: "POST",
+          data: newUserEventRole,
+          contentType: "application/json"
+        })
+        .done(function(data) {
+          console.log(data);
+        })
+        .fail(function() {
+          console.log('no data');
+        });
       });
-    })
-    .fail(function() {
-      console.log('no data');
     });
+
   $('.event-details').on('click', function(event) {
     if (localStorage.getItem('origin') === 'org') {
       window.location.href = 'organization_home.html';
     } else {
       window.location.href = 'user_home.html';
+    }
+  });
+
+  $('#done').on('click', function(){
+    var origin = localStorage.getItem('origin');
+    var allEvents = localStorage.getItem('all_events');
+
+    if(allEvents === 'true'){
+      window.location.href = 'browse_events.html';
+    }
+    else{
+      if(origin === 'user')
+        window.location.href = 'user_home.html';
+      else
+        window.location.href = 'organization_home.html';
     }
   });
 });
