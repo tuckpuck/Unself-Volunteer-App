@@ -96,7 +96,7 @@ exports.seed = function(knex, Promise) {
         }
       ])
       .then(() => {
-        return knex.raw("SELECT setval('roles_id_seq', (SELECT MAX(id) FROM roles))");
+        return knex.raw("SELECT setval('event_roles_id_seq', (SELECT MAX(id) FROM event_roles))");
     });
   });
 };
