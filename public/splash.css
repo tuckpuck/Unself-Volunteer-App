@@ -18,7 +18,7 @@ h2{
   opacity: .8;
   text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
-  background-color: #32FCFC;
+  background-color: #F9F829;
   color: #FFFFFF;
 }
 
@@ -29,9 +29,6 @@ h2{
   opacity: .7;
   text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
-}
-#signin :hover {
-  opacity: 1;
 }
 
 @media (max-width:730px) {
