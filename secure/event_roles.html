@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- Roboto Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<!-- Local CSS -->
+  <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="shortcut icon" href="img/icon.ico">
 </head>
@@ -22,101 +22,104 @@
     <a class="navbar-brand" href="organization_home.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
     <form class="form-inline my-2 my-lg-2" action="logout.html">
-      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" id ="logout" type="button">Logout</button>
+      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" id="logout" type="button">Logout</button>
     </form>
   </nav>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h1 class="display-3 topmargin70">Event Roles:</h1>
-    <div class="card topmargin20">
-    <ul id="roleTable" class="list-group list-group-flush">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-3 topmargin70">Event Roles:</h1>
+        <div class="card topmargin20">
+          <ul id="roleTable" class="list-group list-group-flush">
 
-    </ul>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
 
-<div class="text-center row">
-  <button class="btn btn-info margin10 col-md-2 offset-md-5 homebtn" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
-  </div>
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content container">
-        <h1 class="text-sm-center topmargin40">New Role</h1>
-        <form id="add-role">
-          <label class="roles" for="roles">Select Role</label>
-          <select id="role" class="form-control select-roles" name="select-roles">
+    <div class="text-center row">
+      <button class="btn btn-info margin10 col-md-2 offset-md-5 homebtn" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content container">
+          <h1 class="text-sm-center topmargin40">New Role</h1>
+          <form id="add-role">
+            <label class="roles" for="roles">Select Role</label>
+            <select id="role" class="form-control select-roles" name="select-roles">
             <option value= "" disable selected hidden>Select</option>
           </select>
-          <div class="row container">
-            <label for="eventDate">Event Date: *</label>
-          </div>
-          <div class="row container">
-            <div class="input-group input-daterange">
-              <input type="text" id="s-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
-              <div class="input-group-addon">to</div>
-              <input type="text" id="e-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
+            <div class="row container">
+              <label for="eventDate">Event Date: *</label>
             </div>
-          </div>
-          <div class="row container">
-            <label for="startTime">Start Time</label>
-          </div>
-          <div class="form-group">
-          <div class="row container">
-              <select class="form-control start-time col-10" id="s-time" required>
+            <div class="form-group row">
+              <div class="col">
+                <label for="example-datetime-local-input" class=" col-form-label">Start Date</label>
+                <!-- <div class="col-10"> -->
+                <input class="form-control" type="date" value=" " id="s-date" required>
+              </div>
+              <div class="col">
+                <label for="example-datetime-local-input" class="col-form-label">End Date</label>
+                <input class="form-control" type="date" value=" " id="e-date" required>
+              </div>
+            </div>
+            <div class="row container">
+              <label for="startTime">Start Time</label>
+            </div>
+            <div class="form-group">
+              <div class="row container">
+                <select class="form-control start-time col-10" id="s-time" required>
                 <option value= "" disable selected hidden>Select</option>
                 <option value= "12:00">12:00</option>
                 <option value= "12:30">12:30</option>
               </select>
-              <select class="form-control col-2" id="ampmStart" required>
+                <select class="form-control col-2" id="ampmStart" required>
                 <option value= "" disable selected hidden>AM/PM</option>
                 <option value="AM">AM</option>
                 <option value="PM">PM</option>
               </select>
-          </div>
-          <div class="row container">
-            <label for="endTime">End Time</label>
-          </div>
-          <div class="row container">
-            <select class="form-control end-time col-10" id="e-time" required>
+              </div>
+              <div class="row container">
+                <label for="endTime">End Time</label>
+              </div>
+              <div class="row container">
+                <select class="form-control end-time col-10" id="e-time" required>
               <option value= "" disable selected hidden>Select</option>
               <option value= "12:00">12:00</option>
               <option value= "12:30">12:30</option>
             </select>
-            <select class="form-control col-2" id="ampmEnd" required>
+                <select class="form-control col-2" id="ampmEnd" required>
               <option value= "" disable selected hidden>AM/PM</option>
               <option value="AM">AM</option>
               <option value="PM">PM</option>
             </select>
-          </div>
+              </div>
               <label for="number_needed">Number Needed</label>
               <input class="form-control" type="number" name="number_needed" id="number_needed" required>
               <div class="text-center">
-              <button id="role-submit" type="submit" class="btn btn-outline-success topmargin20" name="button">Add Role</button>
+                <button id="role-submit" type="submit" class="btn btn-outline-success topmargin20" name="button">Add Role</button>
               </div>
             </div>
 
-        </form>
+          </form>
+        </div>
       </div>
     </div>
+    <div class="text-center">
+      <a href="organization_home.html"><button class="btn homebtn btn-primary topmargin10">Done!</button></a>
+    </div>
   </div>
-  <div class="text-center">
-        <a href="organization_home.html"><button class="btn homebtn btn-primary topmargin10">Done!</button></a>
-        </div>
-</div> <!-- /container -->
+  <!-- /container -->
 
-    <!-- jQuery JS-->
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <!-- Tether JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="script/event_roles.js" charset="utf-8"></script>
-    <script src="script/shared_js.js"></script>
+  <!-- jQuery JS-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Tether JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="script/event_roles.js" charset="utf-8"></script>
+  <script src="script/shared_js.js"></script>
 </body>
+
 </html>
