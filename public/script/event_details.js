@@ -1,13 +1,21 @@
 $(document).ready(function() {
   var eventId = window.location.href.split('?')[1];
   var userId = localStorage.getItem('id');
+  var origin = localStorage.getItem('origin');
   var request = $.ajax({
       url: `/event_roles${eventId}`,
       method: "GET",
       contentType: "application/json"
+  })
+  .done(function(data) {
+    var request2 = $.ajax({
+        url: `/user_event_roles${eventId}`,
+        method: "GET",
+        contentType: "application/json"
     })
-    .done(function(data) {
-      console.log(data);
+    .done(function(userData) {
+      console.log('user roles', userData);
+
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
           $('#event_detail_img').attr('style', `background-image: url(${data[i].photo_url})`);
@@ -28,22 +36,35 @@ $(document).ready(function() {
           $('#event_detail_url').attr('href', data[i].event_url).text('Visit the Website').attr('target', '_blank');
         }
         if (data[i].event_role_id !== null) {
+          var buttonText = 'Volunteer';
+          var buttonClass = "volunteer btn btn-outline-success";
+          for(let j = 0; j < userData.length; j++){
+             if(userData[j].event_role_id === data[i].event_role_id){
+               buttonText = 'Remove Me';
+               buttonClass = "volunteer btn btn-outline-danger";
+               break;
+             }
+          }
+
           var card = $(`<div class="card col-md-5 col-sm-12">
         <div class="card-block ">
           <h5>${data[i].name}</h5>
           <p>${data[i].description}</p>
-          <button type="button" class="volunteer btn btn-outline-success" data-eventroleid=${data[i].event_role_id} data-userid=${userId}>Volunteer</button>
+          <button type="button" class="${buttonClass}"  data-eventroleid=${data[i].event_role_id} data-userid=${userId}>${buttonText}</button>
         </div>
         </div>`);
           $('#event_detail_roles').append(card);
+
           if (localStorage.getItem('origin') === 'org') {
             $('.volunteer').hide();
-          } else {
+          }
+          else {
             $('.volunteer').show();
           }
         }
       }
       $('.volunteer').on('click', function(event){
+        var $buttonClicked = $(event.target);
         var eventRoleId = $(event.target).data('eventroleid');
         var userId = $('.volunteer').data('userid');
         var newUserEventRole = {
@@ -52,13 +73,27 @@ $(document).ready(function() {
         };
 
         newUserEventRole = JSON.stringify(newUserEventRole);
+        var reqMethod = 'POST';
+        if($buttonClicked.text() === 'Remove Me'){
+          reqMethod = 'DELETE';
+        }
         $.ajax({
           url: `/user_event_roles`,
-          method: "POST",
+          method: reqMethod,
           data: newUserEventRole,
           contentType: "application/json"
         })
         .done(function(data) {
+          $buttonClicked.toggleClass('btn-outline-success');
+          $buttonClicked.toggleClass('btn-outline-danger');
+          if($buttonClicked.text() === 'Volunteer'){
+            $buttonClicked.text('Remove Me');
+          }
+          else{
+            $buttonClicked.text('Volunteer');
+
+          }
+
           console.log(data);
         })
         .fail(function() {
@@ -66,6 +101,7 @@ $(document).ready(function() {
         });
       });
     });
+  });
 
   $('.event-details').on('click', function(event) {
     if (localStorage.getItem('origin') === 'org') {
