@@ -8,10 +8,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const path = require('path');
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(path.join('public')));
 app.use(cookieParser());
 
 const users = require('./routes/users');
@@ -24,6 +24,7 @@ const userEventRoles = require('./routes/user_event_roles');
 
 const token = require('./routes/token');
 const jwt = require('jsonwebtoken');
+
 
 
 app.use(users);
@@ -42,9 +43,11 @@ app.use(function (req,res,next) {
     });
   }
   else {
-    next();
+    return res.redirect('/index.html');
   }
 });
+
+app.use(express.static(path.join('secure')));
 
 app.use(roles);
 app.use(eventRoles);
