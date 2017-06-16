@@ -21,6 +21,7 @@ router.post('/event_roles', function(req,res,next){
 
 router.get('/event_roles:id', function (req,res,next) {
   var eventId = req.params.id;
+
   knex.select(
     'events.name as event_name',
     'events.start_date',
