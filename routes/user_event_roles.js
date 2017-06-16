@@ -43,7 +43,7 @@ router.post('/user_event_roles', function(req,res,next){
     .from('user_event_roles')
     .where('event_role_id', newUserEventRole.event_role_id)
     .then(function(count){
-       return res.send(count[0]);
+      return res.send(count[0]);
      });
   });
 });
@@ -57,6 +57,7 @@ router.delete('/user_event_roles', function(req, res, next){
   .andWhere('event_role_id',eventRoleId)
   .del()
   .then(function(){
+
     return res.sendStatus(200);
   });
 });

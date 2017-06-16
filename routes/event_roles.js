@@ -34,6 +34,10 @@ router.get('/event_roles:id', function (req,res,next) {
     'organizations.name as organization_name',
     'roles.name',
     'roles.description',
+    'event_roles.start_date as role_start_date',
+    'event_roles.end_date as role_end_date',
+    'event_roles.start_time as role_start_time',
+    'event_roles.end_time as role_end_time',
     'event_roles.id as event_role_id',
     'event_roles.number_needed',
     knex.raw('count(user_event_roles.event_role_id) as number_volunteers'))
@@ -54,6 +58,10 @@ router.get('/event_roles:id', function (req,res,next) {
   'organizations.name',
   'roles.name',
   'roles.description',
+  'event_roles.start_date',
+  'event_roles.end_date',
+  'event_roles.start_time',
+  'event_roles.end_time',
   'event_roles.id',
   'event_roles.number_needed'])
   .then(function(data) {

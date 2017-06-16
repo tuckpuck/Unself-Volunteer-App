@@ -48,7 +48,10 @@ $(document).ready(function() {
 
           var card = $(`<div class="card col-md-5 col-sm-12">
         <div class="card-block ">
-          <h5>${data[i].name}</h5>
+          <h4>${data[i].name}</h4>
+          <h6>${data[i].role_start_date} to ${data[i].role_end_date}</h6>
+          <h6>${data[i].role_start_time} to ${data[i].role_end_time}</h6>
+          <h6>Volunteers ${data[i].number_volunteers} / ${data[i].number_needed}</h6>
           <p>${data[i].description}</p>
           <button type="button" class="${buttonClass}"  data-eventroleid=${data[i].event_role_id} data-userid=${userId}>${buttonText}</button>
         </div>
@@ -91,10 +94,9 @@ $(document).ready(function() {
           }
           else{
             $buttonClicked.text('Volunteer');
-
           }
 
-          console.log(data);
+          location.reload();
         })
         .fail(function() {
           console.log('no data');
