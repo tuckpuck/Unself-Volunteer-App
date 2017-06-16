@@ -19,15 +19,15 @@
     <a class="navbar-brand" href="organization_home.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
     <form class="form-inline my-2 my-lg-2" action="logout.html">
-      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" id ="logout" type="button">Logout</button>
+      <button class="btn btn-outline-danger my-2 my-sm-2 navbar-toggler-right" id="logout" type="button">Logout</button>
     </form>
   </nav>
 
   <div class="container-fluid">
     <div class="text-center topmargin70">
-    <h4>Create Your Event</h4>
-      </div>
-    <form class = "event col-md-6 offset-md-3 topmargin40" method = "post">
+      <h4>Create Your Event</h4>
+    </div>
+    <form class="event col-md-6 offset-md-3 topmargin40" method="post">
       <div class="form-group">
         <label for="eventName">Event Name: *</label>
         <input type="text" id="event-name" class="form-control" required>
@@ -49,10 +49,17 @@
       </div>
 
       <label for="eventDate">Event Date: *</label>
-      <div class="input-group input-daterange">
-        <input type="text" id="start-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
-        <div class="input-group-addon">to</div>
-        <input type="text" id="end-date" class="form-control" placeholder="MM-DD-YYYY" value="" required>
+      <div class="form-group row">
+        <div class="col">
+          <label for="example-datetime-local-input" class=" col-form-label">Start Date</label>
+          <!-- <div class="col-10"> -->
+          <input class="form-control" type="date" value=" " id="start-date" required>
+        </div>
+        <div class="col">
+          <label for="example-datetime-local-input" class=" col-form-label">End Date</label>
+          <!-- <div class="col-10"> -->
+          <input class="form-control" type="date" value=" " id="end-date" required>
+        </div>
       </div>
       <div class="row">
         <div class="col">
@@ -94,7 +101,7 @@
         <div class="col">
           <div class="form-group">
             <label for="amPm">&nbsp;</label>
-              <select class="form-control" id="ampmEnd" required>
+            <select class="form-control" id="ampmEnd" required>
                 <option value= "" disable selected hidden>AM/PM</option>
                 <option value="AM">AM</option>
                 <option value="PM">PM</option>
@@ -183,7 +190,7 @@
     </form>
     <div class="row">
     </div>
-    </div>
+  </div>
 
 
 
