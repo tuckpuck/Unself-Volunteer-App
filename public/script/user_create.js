@@ -21,7 +21,7 @@ $( document ).ready(function() {
     newUser.email = $('#email').val();
     newUser.phone = $('#phone').val() || null;
     newUser.age = $('#age').val() || null;
-    newUser.photo_url = $('#photo_url').val() || null;
+    newUser.photo_url = null;
     newUser.password = $('#user_password').val();
 
     newUser = JSON.stringify(newUser);

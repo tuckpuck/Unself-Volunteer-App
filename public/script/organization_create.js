@@ -6,7 +6,6 @@ $( document ).ready(function() {
     this.email = org_email;
     this.web_url = org_website;
     this.description = org_description;
-    this.photo_url = org_photo_url;
     this.password = password;
   }
 
@@ -21,7 +20,7 @@ $( document ).ready(function() {
     newOrg.email = $('#org_email').val() || null;
     newOrg.web_url = $('#org_website').val() || null;
     newOrg.description = $('#org_description').val() || null;
-    newOrg.photo_url = $('#org_photo_url').val() || null;
+    newOrg.photo_url = null;
     newOrg.password = $('#org_password').val();
 
     newOrg = JSON.stringify(newOrg);
@@ -37,7 +36,7 @@ $( document ).ready(function() {
       localStorage.setItem('name',data.name);
       localStorage.setItem('id',data.organization_id);
       localStorage.setItem('origin','org');
-      
+
       window.location.href = "organization_home.html";
     })
     .fail(function() {
