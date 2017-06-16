@@ -10,7 +10,7 @@ Volunteering made easy!
 
 ## Welcome To The Home Page!
 
-![](project_screenshots/Screenshot 2017-06-16 09.23.06.png)
+![](project_screenshots/Screenshot2017-06-1609.23.06.png)
 
 **Register Here:** On our homepage you can register as either a volunteer or an organization.
 
@@ -22,7 +22,7 @@ Volunteering made easy!
 
 ## Login To Begin
 
-![](project_screenshots/Screenshot 2017-06-16 09.23.42.png) 
+![](project_screenshots/Screenshot2017-06-1609.23.42.png) 
 
 **Log In Here:** If you already have an account you can log in using our login page.
 
@@ -30,7 +30,7 @@ Volunteering made easy!
 
 ## Create An Organization
 
-![](project_screenshots/Screenshot 2017-06-16 09.26.12.png) 
+![](project_screenshots/Screenshot2017-06-1609.26.12.png) 
 
 **Register Your Organization:** Create an account for your organization so you can start creating events!
 
@@ -38,7 +38,7 @@ Volunteering made easy!
 
 ## Create An Event
 
-![](project_screenshots/Screenshot 2017-06-16 09.43.09.png) 
+![](project_screenshots/Screenshot2017-06-1609.43.09.png) 
 
 **Create Your New Event:** This event will be displayed to potential volunteers.
 
@@ -46,7 +46,7 @@ Volunteering made easy!
 
 ## Browse Events
 
-![](project_screenshots/Screenshot 2017-06-16 09.29.16.png) 
+![](project_screenshots/Screenshot2017-06-1609.29.16.png) 
 
 **Check Out Upcoming Events!**
 
@@ -54,7 +54,7 @@ Volunteering made easy!
 
 ## Event Page
 
-![](project_screenshots/Screenshot 2017-06-16 09.44.47.png) 
+![](project_screenshots/Screenshot2017-06-1609.44.47.png) 
 
 **View Event Details:** Visit an events page to see all the specifics and roles still needing volunteers. Just one click signs you up. If you decide you can't go just click again to remove yourself from the event.
 
@@ -62,7 +62,7 @@ Volunteering made easy!
 
   ## View Your Events
 
-![](project_screenshots/Screenshot 2017-06-16 09.44.32.png) 
+![](project_screenshots/Screenshot2017-06-1609.44.32.png) 
 
 **Your Event Page:** As a volunteer you can see all the events you have signed up for in one convenient place.
 
