@@ -14,11 +14,12 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="shortcut icon" href="img/icon.ico">
 </head>
 
 <body data-origin="all">
-  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
-    <a class="navbar-brand" href="index.html">
+  <nav class="navbar navbar-toggleable-xl navbar-light fixed-top bg-faded">
+    <a class="navbar-brand browse-events">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
 
     <form class="form-inline my-2 my-lg-2" action="logout.html">
@@ -27,15 +28,14 @@
   </nav>
 
   <div class="container-fluid">
-    <h1 class="display-3 text-center topmargin40">Upcoming Events</h1>
+    <h1 class="display-3 text-center topmargin70">Upcoming Events</h1>
 
     <div class="col-md-6 offset-md-3">
       <div id="append"></div>
       <!-- Card appends here -->
     </div>
-
     <div class="text-center">
-        <button id="my_events" class="btn homebtn btn-primary topmargin10">My Events</button>
+        <button id="my_events" class="btn homebtn btn-primary bottommargin40 topmargin10">My Events</button>
    </div>
 
   </div>

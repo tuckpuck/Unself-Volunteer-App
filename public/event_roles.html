@@ -14,10 +14,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="shortcut icon" href="img/icon.ico">
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-xl navbar-light fixed-top bg-faded">
     <a class="navbar-brand" href="organization_home.html">
     <img src="img/unself.svg" class="unself-logo" alt="">&nbsp;&nbsp;Unself</a>
     <form class="form-inline my-2 my-lg-2" action="logout.html">
@@ -28,7 +29,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h1 class="display-3 topmargin40">Event Roles:</h1>
+      <h1 class="display-3 topmargin70">Event Roles:</h1>
     <div class="card topmargin20">
     <ul id="roleTable" class="list-group list-group-flush">
 
@@ -37,8 +38,8 @@
   </div>
   </div>
 
-<div class="text-center">
-  <button class="btn btn-info margin10 col-md-6 offset-md-3 homebtn" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
+<div class="text-center row">
+  <button class="btn btn-info margin10 col-md-2 offset-md-5 homebtn" data-toggle="modal" type="button" data-target=".bd-example-modal-lg">Add Role</button>
   </div>
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
